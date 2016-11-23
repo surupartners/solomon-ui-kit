@@ -1,0 +1,9 @@
+'- [ ] Add `gulp release` which: builds all dependencies so we have an up to date version of the code in `./build`; tells the user the latest tag; asks for the next tag (with a sensible default of one minor change); and updates any tag references in the project (including those in [`readme.md`](readme.md))
+- [ ] Add JS tests and run on TravisCI
+- [ ] Get ScrutinizerCI to check for the words 'TODO'
+- [ ] Check the JS and CSS build properly using TravisCI
+- [ ] Include a static file based, automatically built style guide which documents all the code in the kit. Get this style guide, along with the docs, automatically deployed on Github pages. Have these docs and styleguide built when `gulp release` is run. Consider using http://sassdoc.com/ for automatic SASS documentation.
+- [ ] Check links to directories in [`README.md`](README.md) actually work on Github.
+- [ ] Expand the [Contributing CSS](README.md#contributing-css) section in the readme to talk about the high level architecture (ITCSS?), coding styles, etc.
+- [ ] Document how to use the built CSS and JS, including talking about which files to include and how (talk about `script` and `link` tags) and where the JS stuff will be accessible (e.g. on `window.solomon` — when this method is used).
+- [ ] Build both minified and non-minified JS and CSS, and do sourcemaps.
