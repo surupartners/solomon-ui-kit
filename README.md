@@ -14,7 +14,7 @@ To include the kit in your own projects, include it via its Git URL in the
 
 ```
 "dependencies": {
-  "solomon-ui-kit": "https://hbrown@bitbucket.org/hbrown/npm-test.git#1.0.0",
+  "solomon-ui-kit": "https://hbrown@bitbucket.org/hbrown/npm-test.git#0.1.0",
 },
 ```
 
@@ -24,7 +24,7 @@ Alternatively, you can use the NPM CLI to add it as a dependency to an existing
 NPM installation like so:
 
 ```
-npm install https://hbrown@bitbucket.org/hbrown/npm-test.git#1.0.0 --save
+npm install https://hbrown@bitbucket.org/hbrown/npm-test.git#0.1.0 --save
 ```
 
 ## Building from source
@@ -49,16 +49,30 @@ However, if you wish to build just this kit you can do using Gulp:
 
 ## Contributing
 
+### Making a release
+
+We follow the Git branching strategy outlined in [A successful Git branching
+model](http://nvie.com/posts/a-successful-git-branching-model/). In summary,
+active development happens in the `dev` branch; releases are prepared in
+`release/x.y.z` branches, then releases are completed and released by being
+merged into `master`.
+
+To make a release of code in the `dev` which is ready for release:
+
+1. Checkout `dev`, ensure you have a clean working directory, and that your
+   latest changes have all been pushed to the remote.
+1. Check on Github that `dev` is passing all CI builds and tests.
+1. Run `gulp start-release` to automatically bump the package version numbers
+   and start a `release/x.y.z` branch (e.g. `release/0.1.0`).
+1. (optional) In that branch do any other pre-release tasks.
+1. Run `gulp complete-release` which will merge the release branch into
+   `master`, tag it with the bumped version number, and then merge it back
+   into `dev`.
+
 ### Versioning
 
-Active development happens in the `dev` branch. To make a release of code in the `dev` which is ready for release:
-
-1. Ensure you have a clean working directory.
-1. Start a release branch off of `dev` named `release/{version}` (e.g. `release/1.0.2`).
-1. In that branch do any pre-release tasks, including running `gulp release` to tag the release and update the version references in `package.json`, `README.md`, etc.
-1. Merge the release branch into `master` and then back into `dev`.
-
-We use the [semver versioning convention](http://semver.org/). In summary:
+NPM package tags and Git tags should remain in sync. We use the [semver
+versioning convention](http://semver.org/). In summary:
 
 > Given a version number MAJOR.MINOR.PATCH, increment the:
 >
