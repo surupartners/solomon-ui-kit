@@ -126,6 +126,7 @@ gulp.task('complete-release', function () {
 
         // @improvement: Fix the callback hell below. Maybe gulp-git returns
         // promises?
+
         // 1. Checkout master
         git.checkout('master', function (err) {
             if (err) { throw err; }
@@ -171,33 +172,35 @@ gulp.task('release-start-branch', ['release-update-other-version-references'], f
 
     gutil.log('Package version is now', gutil.colors.yellow(newVersion));
 
+    // TODO: Sort out callback hell below. Maybe gulp-git returns
+    // promises?
+
     // start a release branch
     git.checkout('release/' + newVersion, {args: '-b'}, function (err) {
         if (err) throw err;
+
+        // commit the changed version numbers as the first commit on the
+        // release branch
+        var commit_cmd = execSync('git commit -am "Increments package version to ' + newVersion + '."');
+        if (commit_cmd.status !== 0 || commit_cmd.stderr) {
+            throw 'Failed to Git commit version bump. Please intervene. Error was: ' + commit_cmd.stderr.trim();
+        }
+
+        // Using spawn with stdio: 'inherit' so we can see colours in the git diff output
+        spawn('git', ['diff', '--word-diff', '-U0', 'HEAD^', 'HEAD'], {stdio: "inherit"});
+
+        // Running final instruction in setTimeout so it appears after everything else
+        setTimeout(function () {
+            gutil.log(gutil.colors.bold('↑↑↑ Please review committed changes above'));
+            gutil.log(
+                'When you\'re ready to finalise this release, run',
+                gutil.colors.bgCyan.black.bold(' gulp complete-release '),
+                'from this branch to merge into master and tag that merge commit with the package version.'
+            );
+
+            callback();
+        }, 200);
     });
-
-    // commit the changed version numbers as the first commit on the
-    // release branch
-    // git.commit('Increments package version to ' + newVersion + '.');
-    var commit_cmd = execSync('git commit -am "Increments package version to ' + newVersion + '."');
-    if (commit_cmd.status !== 0 || commit_cmd.stderr) {
-        throw 'Failed to Git commit version bump. Please intervene. Error was: ' + commit_cmd.stderr.trim();
-    }
-
-    // Using spawn with stdio: 'inherit' so we can see colours in the git diff output
-    spawn('git', ['diff', '--word-diff', '-U0', 'HEAD^', 'HEAD'], {stdio: "inherit"});
-
-    // Running final instruction in setTimeout so it appears after everything else
-    setTimeout(function () {
-        gutil.log(gutil.colors.bold('↑↑↑ Please review committed changes above'));
-        gutil.log(
-            'When you\'re ready to finalise this release, run',
-            gutil.colors.bgCyan.black.bold(' gulp complete-release '),
-            'from this branch to merge into master and tag that merge commit with the package version.'
-        );
-    }, 200);
-
-    callback();
 });
 
 /**
