@@ -181,7 +181,7 @@ gulp.task('release-start-branch', ['release-update-other-version-references'], f
 
         // commit the changed version numbers as the first commit on the
         // release branch
-        var commit_cmd = execSync('git commit -am "Increments package version to ' + newVersion + '."');
+        var commit_cmd = execSync('git commit -am "Increments package version to ' + newVersion);
         if (commit_cmd.status !== 0 || commit_cmd.stderr) {
             throw 'Failed to Git commit version bump. Please intervene. Error was: ' + commit_cmd.stderr.trim();
         }
