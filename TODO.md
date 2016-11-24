@@ -1,5 +1,5 @@
-- [ ] Add a `CHANGELOG.md` file and write up a release policy which includes filling out this section. In `gulp start-release` we should populate a section for the release; in `gulp complete-release` we should check that a changelog section exists and that it's populated.
-- [ ] Add `gulp release` which: builds all dependencies so we have an up to date version of the code in `./build`; tells the user the latest tag; asks for the next tag (with a sensible default of one minor change); and updates any tag references in the project (including those in [`readme.md`](readme.md))
+- [ ] Add a [`CHANGELOG.md`](CHANGELOG.md) file and write up a release policy which includes filling out this section. In `gulp start-release` we should populate a section for the release; in `gulp complete-release` we should check that a changelog section exists and that it's populated.
+- [ ] Add `gulp release` which: builds all dependencies so we have an up to date version of the code in `./build`; tells the user the latest tag; asks for the next tag (with a sensible default of one minor change); and updates any tag references in the project (including those in [`README.md`](README.md))
 - [ ] Add JS tests and run on TravisCI
 - [ ] Get ScrutinizerCI to check for the words 'TODO'
 - [ ] Check the JS and CSS build properly using TravisCI
