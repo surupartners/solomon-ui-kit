@@ -183,7 +183,8 @@ gulp.task('release-start-branch', ['release-update-other-version-references'], f
         // release branch
         var commit_cmd = execSync('git commit -am "Increments package version to ' + newVersion);
         if (commit_cmd.status !== 0 || commit_cmd.stderr) {
-            throw 'Failed to Git commit version bump. Please intervene. Error was: ' + commit_cmd.stderr.trim();
+            gutil.log(gutil.colors.red('ERROR:', commit_cmd.stderr.trim()));
+            throw 'Failed to Git commit version bump. Please intervene.';
         }
 
         // Using spawn with stdio: 'inherit' so we can see colours in the git diff output
