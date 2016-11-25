@@ -63,14 +63,17 @@ To make a release of code in the `dev` which is ready for release:
    latest changes have all been pushed to the remote.
 1. Check on Github that `dev` is passing all CI builds and tests.
 1. Run `gulp start-release` to automatically bump the package version numbers
-   and start a `release/x.y.z` branch (e.g. `release/0.1.1`).
-1. (optional) In that branch do any other pre-release tasks.
+   and start a `release/x.y.z` branch (e.g. `release/0.1.1`). You should now be
+   on your release branch.
+1. Update [`CHANGELOG.md`](CHANGELOG.md)
 1. Build front-end assets by running `gulp build` and check they all work
    correctly. This is important so that less technical projects can use the
    built files directly without having to have their own build processes.
+1. _(optional)_ In the release branch do any other pre-release tasks you wish to.
 1. Run `gulp complete-release` which will merge the release branch into
    `master`, tag it with the bumped version number, and then merge it back
    into `dev`.
+1. If everything looks good, push `master` and `dev` to the remote repository.
 
 ### Versioning
 
