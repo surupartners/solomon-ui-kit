@@ -1,0 +1,33 @@
+/**
+ * Breakpoint helper function
+ *
+ * Outputs a media query with the input width as the min-width value
+ *
+ * Basic use:
+ *
+    .foo {
+        color: red;
+
+        @include mq(30em) {
+            color: blue;
+        }
+    }
+ *
+ *
+ */
+
+@mixin mq($query) {
+
+    $breakpoint: $query;
+
+    // If param is a list, grab actual media query part of string
+    @if type-of($query) == "list" and
+        type-of(nth($query, 1)) == "number" {
+        $breakpoint: nth($query, 1);
+    }
+
+    @media (min-width: $breakpoint) {
+        @content
+    }
+
+}

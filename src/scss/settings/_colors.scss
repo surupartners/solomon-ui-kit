@@ -1,0 +1,41 @@
+/*!Colours */
+$color-blue: adjust_hue(#1C63BB, -10);
+$color-green: #68B228;
+$color-mid-green: #68B228;
+$color-red: #D62B2B;
+$color-grey: grey;
+$color-brand: #1F205A;
+
+$color-text: #444;
+$color-grey-text: lighten($color-text, 20%);
+$color-heading: #222;
+$color-placeholder: darken(white, 18%);
+$color-error: $color-red;
+$color-link: $color-blue;
+$color-link-hover: lighten($color-blue, 10%);
+$color-block-shade: darken(white, 4%);
+$color-block-shade-dark: darken(white, 18%);
+$color-block-shade-light: darken(white, 2%);
+$color-block-hover: darken(white, 8%);
+$color-block-hover-dark: darken(white, 12%);
+$color-ui-line: darken(white, 25%);
+$color-ui-line-light: lighten($color-ui-line, 12%);
+$color-ui-line-dark: darken($color-ui-line, 30%);
+$color-ui-focus: lighten(mix(#38BCD8, $color-blue, 80%), 10%);
+$color-block-selected: mix(white, $color-ui-focus, 91%);
+
+/**
+ * Status marker colours
+ */
+$color-success: $color-green;
+$color-error: $color-red;
+$color-alert: darken(orange, 5%);
+$color-alert--light: mix(white, $color-alert, 65%);
+$color-draft: darken(white, 12%);
+$color-info: #FFBB00;
+$color-info--light: mix($color-info, white, 4%);
+
+$color-success__background: mix(white, $color-success, 75%);
+$color-alert__background: mix(white, $color-alert, 70%);
+$color-error__background: mix(white, $color-error, 70%);
+$color-info__background: $color-info--light;
