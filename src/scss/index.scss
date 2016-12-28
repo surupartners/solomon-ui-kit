@@ -8,7 +8,7 @@
 @import "settings/container";
 @import "settings/defaults";
 
-@import "tools/basespace";
 @import "tools/breakpoint_function";
+@import "tools/basespace"; /* depends on breakpoint_function */
 @import "tools/button";
 @import "tools/font_weight";
