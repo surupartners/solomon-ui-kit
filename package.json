@@ -39,9 +39,11 @@
     "gulp-uglify": "^2.0.0",
     "gulp-util": "^3.0.7",
     "inquirer": "^1.2.3",
+    "jquery": "^3.1.1",
     "modularscale-sass": "^2.1.1",
     "require-dir": "^0.3.1",
     "sync-exec": "^0.6.2",
+    "underscore": "^1.8.3",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0"
   }
