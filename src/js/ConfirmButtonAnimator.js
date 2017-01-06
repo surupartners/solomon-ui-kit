@@ -34,7 +34,7 @@ var ConfirmButtonAnimator = {
             event.preventDefault();
             this.hideConfirmButton(event.currentTarget);
         }, this));
-    }
+    },
 
     revealConfirmButton: function (revealButton) {
         var $buttonWrapper  = $(revealButton).parents('.js--confirm-button__wrapper'),
@@ -58,7 +58,7 @@ var ConfirmButtonAnimator = {
         $initialWrapper.removeClass('hidden');
 
         $buttonWrapper.find(".js--confirm-button__confirm, .js--confirm-button__cancel").prop("disabled", true);
-    },
+    }
 };
 
 module.exports = ConfirmButtonAnimator;
