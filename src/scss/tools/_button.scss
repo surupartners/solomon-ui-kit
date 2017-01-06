@@ -1,0 +1,53 @@
+@mixin button {
+    font-size: $button-base-size;
+    font-weight: 600;
+    padding: $button-base-end-padding $button-base-side-padding;
+    margin-right: 0.5em;
+    @include rem(margin-bottom, $button-bottom-margin); // Required in case buttons wrap around and stack.
+    display: inline-block;
+    vertical-align: middle;
+    cursor: pointer;
+    border-radius: $button-radius;
+    overflow: visible;
+    line-height: 1;
+    text-decoration: none;
+    text-align: center;
+    color: white;
+    background: $button-primary;
+    border: 1px solid darken($button-primary, 5%);
+    -webkit-appearance: none;
+    -webkit-font-smoothing: antialiased;
+    text-shadow: none;
+    transition: all 0.2s;
+
+    &.float--right {
+        margin-right: 0;
+        margin-left: 0.5em;
+    }
+
+    &:hover,
+    &:active,
+    &:focus {
+        color: white;
+        text-decoration: none;
+        background: darken($button-primary, 7%);
+        border: 1px solid darken($button-primary, 12%);
+    }
+
+    &:active {
+        box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.2) inset;
+    }
+
+    // Alternative for input-group buttons
+    .input-group__button & {
+        border: 0;
+        box-shadow: inset 0 0 0 1px darken($button-primary, 5%);
+    }
+
+    .input-group__button &:hover,
+    .input-group__button &:active,
+    .input-group__button &:focus {
+        border: 0;
+        box-shadow: inset 0 0 0 1px darken($button-primary, 12%);
+    }
+}

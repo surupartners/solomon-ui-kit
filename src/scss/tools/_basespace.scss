@@ -1,0 +1,316 @@
+/**
+ * Default spacing
+ */
+
+$basespace-large-multiplier: 2.5;
+$basespace-small-multiplier: 1/2;
+$basespace-tiny-multiplier: 1/4;
+
+@mixin basespace {
+
+    @include rem(margin-bottom, $basespace);
+
+    @include mq($bp-small) {
+        @include rem(margin-bottom, $basespace-med);
+    }
+
+    @include mq($bp-med) {
+        @include rem(margin-bottom, $basespace-large);
+    }
+
+    @include mq($bp-large) {
+        @include rem(margin-bottom, $basespace-xl);
+    }
+}
+
+@mixin basespace--top {
+
+    @include rem(margin-top, $basespace);
+
+    @include mq($bp-small) {
+        @include rem(margin-top, $basespace-med);
+    }
+
+    @include mq($bp-med) {
+        @include rem(margin-top, $basespace-large);
+    }
+
+    @include mq($bp-large) {
+        @include rem(margin-top, $basespace-xl);
+    }
+}
+
+@mixin basespace--small {
+
+    @include rem(margin-bottom, $basespace * $basespace-small-multiplier);
+
+    @include mq($bp-small) {
+        @include rem(margin-bottom, $basespace-med * $basespace-small-multiplier);
+    }
+
+    @include mq($bp-med) {
+        @include rem(margin-bottom, $basespace-large * $basespace-small-multiplier);
+    }
+
+    @include mq($bp-large) {
+        @include rem(margin-bottom, $basespace-xl * $basespace-small-multiplier);
+    }
+}
+
+@mixin basespace--tiny {
+
+    @include rem(margin-bottom, $basespace * $basespace-tiny-multiplier);
+
+    @include mq($bp-small) {
+        @include rem(margin-bottom, $basespace-med * $basespace-tiny-multiplier);
+    }
+
+    @include mq($bp-med) {
+        @include rem(margin-bottom, $basespace-large * $basespace-tiny-multiplier);
+    }
+
+    @include mq($bp-large) {
+        @include rem(margin-bottom, $basespace-xl * $basespace-tiny-multiplier);
+    }
+}
+
+@mixin basespace--top--small { @include basespace--small--top; }
+@mixin basespace--small--top {
+
+    @include rem(margin-top, $basespace * $basespace-small-multiplier);
+
+    @include mq($bp-small) {
+        @include rem(margin-top, $basespace-med * $basespace-small-multiplier);
+    }
+
+    @include mq($bp-med) {
+        @include rem(margin-top, $basespace-large * $basespace-small-multiplier);
+    }
+
+
+    @include mq($bp-large) {
+        @include rem(margin-top, $basespace-xl * $basespace-small-multiplier);
+    }
+}
+
+@mixin basespace--large {
+
+    @include rem(margin-bottom, $basespace * $basespace-large-multiplier);
+
+    @include mq($bp-small) {
+        @include rem(margin-bottom, $basespace-med * $basespace-large-multiplier);
+    }
+
+    @include mq($bp-med) {
+        @include rem(margin-bottom, $basespace-large * $basespace-large-multiplier);
+    }
+
+    @include mq($bp-large) {
+        @include rem(margin-bottom, $basespace-xl * $basespace-large-multiplier);
+    }
+}
+
+@mixin basespace--top--large { @include basespace--large--top; }
+@mixin basespace--large--top {
+
+    @include rem(margin-top, $basespace * $basespace-large-multiplier);
+
+    @include mq($bp-small) {
+        @include rem(margin-top, $basespace-med * $basespace-large-multiplier);
+    }
+
+    @include mq($bp-med) {
+        @include rem(margin-top, $basespace-large * $basespace-large-multiplier);
+    }
+
+    @include mq($bp-large) {
+        @include rem(margin-top, $basespace-xl * $basespace-large-multiplier);
+    }
+}
+
+@mixin basespace-pad {
+
+    @include rem(padding-bottom, $basespace);
+
+    @include mq($bp-small) {
+        @include rem(padding-bottom, $basespace-med);
+    }
+
+    @include mq($bp-med) {
+        @include rem(padding-bottom, $basespace-large);
+    }
+
+    @include mq($bp-large) {
+        @include rem(padding-bottom, $basespace-xl);
+    }
+}
+
+@mixin basespace-pad--top {
+
+    @include rem(padding-top, $basespace);
+
+    @include mq($bp-small) {
+        @include rem(padding-top, $basespace-med);
+    }
+
+    @include mq($bp-med) {
+        @include rem(padding-top, $basespace-large);
+    }
+
+    @include mq($bp-large) {
+        @include rem(padding-top, $basespace-xl);
+    }
+}
+
+@mixin basespace-pad--bottom {
+
+    @include rem(padding-bottom, $basespace);
+
+    @include mq($bp-small) {
+        @include rem(padding-bottom, $basespace-med);
+    }
+
+    @include mq($bp-med) {
+        @include rem(padding-bottom, $basespace-large);
+    }
+
+    @include mq($bp-large) {
+        @include rem(padding-bottom, $basespace-xl);
+    }
+}
+
+@mixin basespace-pad--small {
+    @include rem(padding-bottom, $basespace * $basespace-small-multiplier);
+
+    @include mq($bp-small) {
+        @include rem(padding-bottom, $basespace-med * $basespace-small-multiplier);
+    }
+
+    @include mq($bp-med) {
+        @include rem(padding-bottom, $basespace-large * $basespace-small-multiplier);
+    }
+
+    @include mq($bp-large) {
+        @include rem(padding-bottom, $basespace-xl * $basespace-small-multiplier);
+    }
+}
+
+@mixin basespace-pad--top--small { @include basespace-pad--small--top; }
+@mixin basespace-pad--small--top {
+
+    @include rem(padding-top, $basespace * $basespace-small-multiplier);
+
+    @include mq($bp-small) {
+        @include rem(padding-top, $basespace-med * $basespace-small-multiplier);
+    }
+
+    @include mq($bp-med) {
+        @include rem(padding-top, $basespace-large * $basespace-small-multiplier);
+    }
+
+    @include mq($bp-large) {
+        @include rem(padding-top, $basespace-xl * $basespace-small-multiplier);
+    }
+}
+
+@mixin basespace-pad--large {
+
+    @include rem(padding-bottom, $basespace * $basespace-large-multiplier);
+
+    @include mq($bp-small) {
+        @include rem(padding-bottom, $basespace-med * $basespace-large-multiplier);
+    }
+
+    @include mq($bp-med) {
+        @include rem(padding-bottom, $basespace-large * $basespace-large-multiplier);
+    }
+
+    @include mq($bp-large) {
+        @include rem(padding-bottom, $basespace-xl * $basespace-large-multiplier);
+    }
+}
+
+@mixin basespace-pad--top--large { @include basespace-pad--large--top; }
+@mixin basespace-pad--large--top {
+
+    @include rem(padding-top, $basespace * $basespace-large-multiplier);
+
+    @include mq($bp-small) {
+        @include rem(padding-top, $basespace-med * $basespace-large-multiplier);
+    }
+
+    @include mq($bp-med) {
+        @include rem(padding-top, $basespace-large * $basespace-large-multiplier);
+    }
+
+    @include mq($bp-large) {
+        @include rem(padding-top, $basespace-xl * $basespace-large-multiplier);
+    }
+}
+
+
+@mixin basespace-negative {
+
+    @include rem(margin-top, -$basespace);
+
+    @include mq($bp-small) {
+        @include rem(margin-top, -$basespace-med);
+    }
+
+    @include mq($bp-med) {
+        @include rem(margin-top, -$basespace-large);
+    }
+
+    @include mq($bp-large) {
+        @include rem(margin-top, -$basespace-xl);
+    }
+}
+
+@mixin basespace-negative--bottom {
+    @include rem(margin-bottom, -$basespace);
+
+    @include mq($bp-small) {
+        @include rem(margin-bottom, -$basespace-med);
+    }
+
+    @include mq($bp-med) {
+        @include rem(margin-bottom, -$basespace-large);
+    }
+
+    @include mq($bp-large) {
+        @include rem(margin-bottom, -$basespace-xl);
+    }
+}
+
+@mixin basespace-negative--small {
+    @include rem(margin-top, -$basespace * $basespace-small-multiplier);
+
+    @include mq($bp-small) {
+        @include rem(margin-top, -$basespace-med * $basespace-small-multiplier);
+    }
+
+    @include mq($bp-med) {
+        @include rem(margin-top, -$basespace-large * $basespace-small-multiplier);
+    }
+
+    @include mq($bp-large) {
+        @include rem(margin-top, -$basespace-xl * $basespace-small-multiplier);
+    }
+}
+
+@mixin basespace-negative--bottom--small {
+    @include rem(margin-bottom, -$basespace * $basespace-small-multiplier);
+
+    @include mq($bp-small) {
+        @include rem(margin-bottom, -$basespace-med * $basespace-small-multiplier);
+    }
+
+    @include mq($bp-med) {
+        @include rem(margin-bottom, -$basespace-large * $basespace-small-multiplier);
+    }
+
+
+    @include mq($bp-large) {
+        @include rem(margin-bottom, -$basespace-xl * $basespace-small-multiplier);
+    }
+}

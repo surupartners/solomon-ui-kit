@@ -16,7 +16,10 @@ gulp.task('scss', ['css']);
 gulp.task('css', ['clean:css'], function () {
   return gulp.src('src/scss/**/*.scss')
     .pipe(sourcemaps.init())
-    .pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError))
+    .pipe(sass({
+        outputStyle: 'expanded',
+        includePaths: ['node_modules']
+    }).on('error', sass.logError))
     .pipe(autoprefixer({browsers: ['IE 8', '> 0.1%']}))
     .pipe(sourcemaps.write())
     .pipe(gulp.dest('build/css'))

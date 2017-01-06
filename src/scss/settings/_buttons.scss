@@ -1,0 +1,20 @@
+$button-base-size: 0.9em;
+$button-base-side-padding: 1.75em;
+$button-base-end-padding: 0.75em;
+$button-bottom-margin: 0.75/* rem */;
+$button-radius: 0.125em;
+
+/* Global button colors */
+$button-primary: $color-blue;
+$button-secondary: #EEEEEE;
+$button-alert: $color-red;
+$button-confirm: $color-green;
+
+$primary-inactive: desaturate(mix(white, $button-primary, 50%), 15%);
+$secondary-inactive: mix(white, $button-secondary, 20%);
+$alert-inactive: desaturate(mix(white, $button-alert, 50%), 15%);
+$edit-inactive: desaturate(mix(white, $color-alert, 50%), 15%);
+$confirm-inactive: desaturate(mix(white, $button-confirm, 50%), 15%);
+
+$button--small-size: $milli-size * strip-unit($button-base-size);
+$button--tiny-size: 0.75em;
