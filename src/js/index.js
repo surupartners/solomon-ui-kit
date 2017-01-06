@@ -7,7 +7,10 @@
  * that you need to use using `require()` statements.
  */
 
- var ExampleModule = require('ExampleModule');
+ var FormSubmitAnimator = require('FormSubmitAnimator');
+
+// Register submit events for form animations
+FormSubmitAnimator.registerFormSubmitListener();
 
  // TODO: Use this file to make the included JS modules exposed on
  // `window.solomon` and write usage docs for this method (as distinct from the
