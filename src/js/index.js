@@ -12,6 +12,9 @@
 // Register submit events for form animations
 FormSubmitAnimator.registerFormSubmitListener();
 
+// Reigster listener for the confirm button animator
+ConfirmButtonAnimator.registerListeners();
+
  // TODO: Use this file to make the included JS modules exposed on
  // `window.solomon` and write usage docs for this method (as distinct from the
  // method of installing the kit as an NPM package and using `require()`)
