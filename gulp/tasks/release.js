@@ -148,7 +148,7 @@ gulp.task('complete-release', function () {
                             if (err) { throw err; }
 
                             // 6. Delete the release branch
-                            git.exec({args: 'br -d ' + releaseBranch}, function (err, stdout) {
+                            git.exec({args: 'branch -d ' + releaseBranch}, function (err, stdout) {
                                 if (err) { throw err; }
                                 gutil.log( stdout );
                             });
