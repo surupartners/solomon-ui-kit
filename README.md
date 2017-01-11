@@ -27,12 +27,16 @@ NPM installation like so:
 npm install https://hbrown@bitbucket.org/hbrown/npm-test.git#0.2.2 --save
 ```
 
-## Building from source
+## Contributing
 
-The kit contains only source files with the intention that you will include the
-kit in your own projects and run SASS and JS through your own build tools.
+### Building from source
 
-However, if you wish to build just this kit you can do using Gulp:
+The kit contains only source files with the intention that most people will
+include the kit in their own projects and run SASS and JS through their own
+build tools, or use the pre-built files in `./build`.
+
+Therefore, when developing you should build your changes. You can do that
+using Gulp:
 
 1. [Install Node and NPM](https://nodejs.org/)
 1. Install [Gulp](http://gulpjs.com/) and [Yarn](https://yarnpkg.com/) globally:
@@ -46,8 +50,6 @@ However, if you wish to build just this kit you can do using Gulp:
 1. Build the kit using Gulp. Built files will be places in the `./build` directory.
 
         gulp build
-
-## Contributing
 
 ### Making a release
 
