@@ -1,4 +1,3 @@
-@import "functions";
 @import "modularscale-sass/stylesheets/modular-scale";
 
 @import "settings/breakpoints";
@@ -7,8 +6,3 @@
 @import "settings/buttons"; /* depends on colors and typography */
 @import "settings/container";
 @import "settings/defaults";
-
-@import "tools/breakpoint_function";
-@import "tools/basespace"; /* depends on breakpoint_function */
-@import "tools/button";
-@import "tools/font_weight";
