@@ -11,6 +11,10 @@ rename **Unreleased** to the release version and date and start a new empty
 
 ## `[Unreleased]`
 #### Added
+#### Changed
+
+## `[0.2.0]` — 2017-01-06
+#### Added
 - This [`CHANGELOG.md`](CHANGELOG.md) file.
 
 ## `[0.1.1]` - 2016-11-24
