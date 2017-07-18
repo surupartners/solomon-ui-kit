@@ -7,7 +7,11 @@
     "doc": "docs"
   },
   "scripts": {
+    "yarn": "yarn",
     "gulp": "gulp --gulpfile ./gulpfile.js",
+    "test": "npm run gulp test",
+    "start-release": "npm run gulp start-release",
+    "complete-release": "npm run gulp complete-release"
   },
   "repository": {
     "type": "git",

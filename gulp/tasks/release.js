@@ -195,7 +195,7 @@ gulp.task('release-start-branch', ['release-update-other-version-references'], f
             gutil.log(gutil.colors.bold('↑↑↑ Please review committed changes above'));
             gutil.log(
                 'When you\'re ready to finalise this release, run',
-                gutil.colors.bgCyan.black.bold(' gulp complete-release '),
+                gutil.colors.bgCyan.black.bold(' npm run complete-release '),
                 'from this branch to merge into master and tag that merge commit with the package version.'
             );
 
