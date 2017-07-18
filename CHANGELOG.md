@@ -15,7 +15,7 @@ rename **Unreleased** to the release version and date and start a new empty
 
 ## `[0.3.1]` — 2017-07-18
 #### Added
-- Adds `basespace--bottom` mixins at standard, small and large sizes.
+- Adds [`basespace--bottom` mixins](src/scss/tools/_basespace.scss) at standard, small and large sizes: `basespace--bottom`, `basespace--bottom--small`, `basespace--small--bottom`, `basespace--bottom--large` and `basespace--large--bottom`
 
 ## `[0.3.0]` — 2017-01-11
 #### Added
