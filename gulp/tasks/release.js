@@ -193,7 +193,7 @@ gulp.task('release-start-branch', ['release-update-other-version-references'], f
         // Running final instruction in setTimeout so it appears after everything else
         setTimeout(function () {
             gutil.log(gutil.colors.bold('↑↑↑ Please review committed changes above'));
-            gutil.log('Also, don\'t forget to update CHANGELOG.md with the changes in this release.')
+            gutil.log('Also, don\'t forget to', gutil.colors.bold('update CHANGELOG.md'), 'with the changes in this release.')
             gutil.log(
                 'When you\'re ready to finalise this release, run',
                 gutil.colors.bgCyan.black.bold(' npm run complete-release '),
