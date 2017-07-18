@@ -41,10 +41,11 @@
     "inquirer": "^1.2.3",
     "jquery": "^3.1.1",
     "modularscale-sass": "^2.1.1",
-    "require-dir": "^0.3.1",
+    "require-dir": "^0.3.2",
     "sync-exec": "^0.6.2",
     "underscore": "^1.8.3",
     "vinyl-buffer": "^1.0.0",
-    "vinyl-source-stream": "^1.1.0"
+    "vinyl-source-stream": "^1.1.0",
+    "yarn": "^0.27.5"
   }
 }
