@@ -14,7 +14,7 @@ To include the kit in your own projects, include it via its Git URL in the
 
 ```
 "dependencies": {
-  "solomon-ui-kit": "https://hbrown@bitbucket.org/hbrown/npm-test.git#0.1.1",
+  "solomon-ui-kit": "https://hbrown@bitbucket.org/hbrown/npm-test.git#0.4.0",
 },
 ```
 
@@ -24,30 +24,37 @@ Alternatively, you can use the NPM CLI to add it as a dependency to an existing
 NPM installation like so:
 
 ```
-npm install https://hbrown@bitbucket.org/hbrown/npm-test.git#0.1.1 --save
+npm install https://hbrown@bitbucket.org/hbrown/npm-test.git#0.4.0 --save
 ```
 
-## Building from source
+## Contributing
 
-The kit contains only source files with the intention that you will include the
-kit in your own projects and run SASS and JS through your own build tools.
+### Building from source
 
-However, if you wish to build just this kit you can do using Gulp:
+The kit contains only source files with the intention that most people will
+include the kit in their own projects and run SASS and JS through their own
+build tools, or use the pre-built files in `./build`.
 
-1. [Install Node and NPM](https://nodejs.org/)
-1. Install [Gulp](http://gulpjs.com/) and [Yarn](https://yarnpkg.com/) globally:
+Therefore, when developing you should build your changes. You can do that
+using Gulp:
 
-        npm install -g gulp yarn
+1. [Install Node and NPM](https://nodejs.org/) according to the version defined in [`.nvmrc`](./.nvmrc). If you're already using NVM, just run:
+
+        nvm use
+
+1. Install [Yarn](https://yarnpkg.com/) globally. If you're on a Mac you should install with Homebrew: 
+
+        brew install yarn
+
+    Otherwise, follow the [official installation instructions](https://yarnpkg.com/en/docs/install) for your platform.
 
 1. Install local NPM dependencies with Yarn:
 
-        yarn
+        npm run yarn
 
 1. Build the kit using Gulp. Built files will be places in the `./build` directory.
 
-        gulp build
-
-## Contributing
+        npm run gulp build
 
 ### Making a release
 
@@ -62,12 +69,18 @@ To make a release of code in the `dev` which is ready for release:
 1. Checkout `dev`, ensure you have a clean working directory, and that your
    latest changes have all been pushed to the remote.
 1. Check on Github that `dev` is passing all CI builds and tests.
-1. Run `gulp start-release` to automatically bump the package version numbers
-   and start a `release/x.y.z` branch (e.g. `release/0.1.1`).
-1. (optional) In that branch do any other pre-release tasks.
-1. Run `gulp complete-release` which will merge the release branch into
+1. Run `npm run start-release` to automatically bump the package version numbers
+   and start a `release/x.y.z` branch (e.g. `release/0.4.0`). You should now be
+   on your release branch.
+1. Update [`CHANGELOG.md`](CHANGELOG.md)
+1. Build front-end assets by running `npm run gulp build` and check they all work
+   correctly. This is important so that less technical projects can use the
+   built files directly without having to have their own build processes.
+1. _(optional)_ In the release branch do any other pre-release tasks you wish to.
+1. Run `npm run complete-release` which will merge the release branch into
    `master`, tag it with the bumped version number, and then merge it back
    into `dev`.
+1. If everything looks good, push `master` and `dev` to the remote repository.
 
 ### Versioning
 
@@ -75,12 +88,12 @@ NPM package tags and Git tags should remain in sync. We use the [semver
 versioning convention](http://semver.org/). In summary:
 
 > Given a version number MAJOR.MINOR.PATCH, increment the:
->
+> 
 > - MAJOR version when you make incompatible API changes,
 > - MINOR version when you add functionality in a backwards-compatible manner,
 >   and
 > - PATCH version when you make backwards-compatible bug fixes.
->
+> 
 > Additional labels for pre-release and build metadata are available as
 > extensions to the MAJOR.MINOR.PATCH format.
 
@@ -100,7 +113,7 @@ When adding new Javascript modules to the Kit you should:
 1. `require()` the file [`src/js/index.js`](src/js/index.js) and ensure it
    builds correct. See [Building from source](#building-from-source) for details
    of how to build from source.
-1. Write tests for your code and ensure they are run during `gulp test`. See the
+1. Write tests for your code and ensure they are run during `npm run test`. See the
    [Running tests](#running-tests) section for more.
 
 ### Contributing CSS

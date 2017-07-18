@@ -7,7 +7,17 @@
  * that you need to use using `require()` statements.
  */
 
- var ExampleModule = require('ExampleModule');
+var FormSubmitAnimator               = require('FormSubmitAnimator'),
+    DisabledUnlessHasCheckedElements = require('DisabledUnlessHasCheckedElements');
+
+// Register submit events for form animations
+FormSubmitAnimator.registerFormSubmitListener();
+
+// Reigster listener for the confirm button animator
+ConfirmButtonAnimator.registerListeners();
+
+// A button that's disabled unless there are checked elements specified by the button
+DisabledUnlessHasCheckedElements.registerListener('.js--disabled-unless-has-checked-elements');
 
  // TODO: Use this file to make the included JS modules exposed on
  // `window.solomon` and write usage docs for this method (as distinct from the

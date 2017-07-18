@@ -1,0 +1,13 @@
+// Modular scale ratio
+$ms-ratio: $major-second;
+
+// Base fonts
+$font-body: "Open Sans", arial, sans-serif;
+$font-heading: "Open Sans", arial, sans-serif;
+
+// Font sizes
+$milli-size: ms(-1);
+$micro-size: ms(-2);
+
+$delta-size: ms(2);
+$epsilon-size: ms(1);

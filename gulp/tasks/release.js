@@ -148,9 +148,10 @@ gulp.task('complete-release', function () {
                             if (err) { throw err; }
 
                             // 6. Delete the release branch
-                            git.exec({args: 'br -d ' + releaseBranch}, function (err, stdout) {
+                            git.exec({args: 'branch -d ' + releaseBranch}, function (err, stdout) {
                                 if (err) { throw err; }
                                 gutil.log( stdout );
+                                gutil.log('✔ Done. Your release is ready to be pushed. You may now push the "dev" and "master" branches and the release tag — e.g:', gutil.colors.bgWhite.black.bold('git push origin master; git push origin dev; git push origin ' + currentVersion + ')'));
                             });
                         });
                     });
@@ -193,9 +194,10 @@ gulp.task('release-start-branch', ['release-update-other-version-references'], f
         // Running final instruction in setTimeout so it appears after everything else
         setTimeout(function () {
             gutil.log(gutil.colors.bold('↑↑↑ Please review committed changes above'));
+            gutil.log('Also, don\'t forget to', gutil.colors.bold('update CHANGELOG.md'), 'with the changes in this release.')
             gutil.log(
                 'When you\'re ready to finalise this release, run',
-                gutil.colors.bgCyan.black.bold(' gulp complete-release '),
+                gutil.colors.bgCyan.black.bold(' npm run complete-release '),
                 'from this branch to merge into master and tag that merge commit with the package version.'
             );
 
