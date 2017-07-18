@@ -38,7 +38,10 @@ build tools, or use the pre-built files in `./build`.
 Therefore, when developing you should build your changes. You can do that
 using Gulp:
 
-1. [Install Node and NPM](https://nodejs.org/)
+1. [Install Node and NPM](https://nodejs.org/) according to the version defined in [`.nvmrc`](./.nvmrc). If you're already using NVM, just run:
+
+        nvm use
+
 1. Install [Yarn](https://yarnpkg.com/) globally. If you're on a Mac you should install with Homebrew: 
 
         brew install yarn
