@@ -7,7 +7,7 @@
     "doc": "docs"
   },
   "scripts": {
-    "test": "gulp test"
+    "gulp": "gulp --gulpfile ./gulpfile.js",
   },
   "repository": {
     "type": "git",

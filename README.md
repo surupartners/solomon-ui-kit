@@ -39,9 +39,11 @@ Therefore, when developing you should build your changes. You can do that
 using Gulp:
 
 1. [Install Node and NPM](https://nodejs.org/)
-1. Install [Gulp](http://gulpjs.com/) and [Yarn](https://yarnpkg.com/) globally:
+1. Install [Yarn](https://yarnpkg.com/) globally. If you're on a Mac you should install with Homebrew: 
 
-        npm install -g gulp yarn
+        brew install yarn
+
+    Otherwise, follow the [official installation instructions](https://yarnpkg.com/en/docs/install) for your platform.
 
 1. Install local NPM dependencies with Yarn:
 
