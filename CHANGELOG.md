@@ -11,9 +11,11 @@ rename **Unreleased** to the release version and date and start a new empty
 
 ## `[Unreleased]`
 #### Added
-- Adds `basespace--bottom` mixins at standard, small and large sizes.
-
 #### Changed
+
+## `[0.3.1]` — 2017-07-18
+#### Added
+- Adds `basespace--bottom` mixins at standard, small and large sizes.
 
 ## `[0.2.0]` — 2017-01-06
 #### Added
