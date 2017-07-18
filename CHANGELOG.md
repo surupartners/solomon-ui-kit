@@ -11,13 +11,36 @@ rename **Unreleased** to the release version and date and start a new empty
 
 ## `[Unreleased]`
 #### Added
+#### Changed
+
+## `[0.3.1]` — 2017-07-18
+#### Added
 - Adds `basespace--bottom` mixins at standard, small and large sizes.
 
+## `[0.3.0]` — 2017-01-11
+#### Added
+- [Usage docs](./docs/usage.md)
+
 #### Changed
+- Re-structured SASS files
+
+## `[0.2.1]` — 2017-01-06
+#### Fixed
+- JS syntax error
+
+## `[0.2.2]` — 2017-01-09
+#### Fixed
+- Gulp release task
 
 ## `[0.2.0]` — 2017-01-06
 #### Added
 - This [`CHANGELOG.md`](CHANGELOG.md) file.
+- Adds various SASS settings, tools and functions.
+- [FormSubmitAnimator](./src/js/FormSubmitAnimator.js) module
+- [ConfirmButtonAnimator](./src/js/ConfirmButtonAnimator.js) module
+- [ButtonTextHelper](./src/js/ButtonTextHelper.js) module
+- [DisabledUnlessHasCheckedElements](./src/js/DisabledUnlessHasCheckedElements.js) module
+- [Javascript helpers](./src/js/Helpers.js)
 
 ## `[0.1.1]` - 2016-11-24
 #### Added
