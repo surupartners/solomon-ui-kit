@@ -40,23 +40,6 @@ $basespace-tiny-multiplier: 1/4;
     }
 }
 
-@mixin basespace--bottom {
-
-    @include rem(margin-bottom, $basespace);
-
-    @include mq($bp-small) {
-        @include rem(margin-bottom, $basespace-med);
-    }
-
-    @include mq($bp-med) {
-        @include rem(margin-bottom, $basespace-large);
-    }
-
-    @include mq($bp-large) {
-        @include rem(margin-bottom, $basespace-xl);
-    }
-}
-
 @mixin basespace--small {
 
     @include rem(margin-bottom, $basespace * $basespace-small-multiplier);
@@ -110,25 +93,6 @@ $basespace-tiny-multiplier: 1/4;
     }
 }
 
-@mixin basespace--bottom--small { @include basespace--small--bottom; }
-@mixin basespace--small--bottom {
-
-    @include rem(margin-bottom, $basespace * $basespace-small-multiplier);
-
-    @include mq($bp-small) {
-        @include rem(margin-bottom, $basespace-med * $basespace-small-multiplier);
-    }
-
-    @include mq($bp-med) {
-        @include rem(margin-bottom, $basespace-large * $basespace-small-multiplier);
-    }
-
-
-    @include mq($bp-large) {
-        @include rem(margin-bottom, $basespace-xl * $basespace-small-multiplier);
-    }
-}
-
 @mixin basespace--large {
 
     @include rem(margin-bottom, $basespace * $basespace-large-multiplier);
@@ -161,24 +125,6 @@ $basespace-tiny-multiplier: 1/4;
 
     @include mq($bp-large) {
         @include rem(margin-top, $basespace-xl * $basespace-large-multiplier);
-    }
-}
-
-@mixin basespace--bottom--large { @include basespace--large--bottom; }
-@mixin basespace--large--bottom {
-
-    @include rem(margin-bottom, $basespace * $basespace-large-multiplier);
-
-    @include mq($bp-small) {
-        @include rem(margin-bottom, $basespace-med * $basespace-large-multiplier);
-    }
-
-    @include mq($bp-med) {
-        @include rem(margin-bottom, $basespace-large * $basespace-large-multiplier);
-    }
-
-    @include mq($bp-large) {
-        @include rem(margin-bottom, $basespace-xl * $basespace-large-multiplier);
     }
 }
 

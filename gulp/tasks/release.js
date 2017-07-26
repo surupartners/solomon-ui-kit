@@ -151,7 +151,7 @@ gulp.task('complete-release', function () {
                             git.exec({args: 'branch -d ' + releaseBranch}, function (err, stdout) {
                                 if (err) { throw err; }
                                 gutil.log( stdout );
-                                gutil.log('✔ Done. Your release is ready to be pushed. You may now push the "dev" and "master" branches and the release tag — e.g:', gutil.colors.bgWhite.black.bold('git push origin master; git push origin dev; git push origin ' + currentVersion + ')'));
+                                gutil.log('✔ Done. Your release is ready to be pushed. You may now push the "dev" and "master" branches and the release tag — e.g:', gutil.colors.bgWhite.black.bold('git push origin master; git push origin dev; git push origin ' + currentVersion + ';'));
                             });
                         });
                     });

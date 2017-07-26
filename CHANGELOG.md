@@ -13,9 +13,13 @@ rename **Unreleased** to the release version and date and start a new empty
 #### Added
 #### Changed
 
+## `[0.3.2]` — 2017-07-26
+#### Changed
+- Removes [`basespace--bottom` mixins](src/scss/tools/_basespace.scss) because they're duplicates of the bog standard basespace mixins
+
 ## `[0.3.1]` — 2017-07-18
 #### Added
-- Adds `basespace--bottom` mixins at standard, small and large sizes.
+- Adds [`basespace--bottom` mixins](src/scss/tools/_basespace.scss) at standard, small and large sizes: `basespace--bottom`, `basespace--bottom--small`, `basespace--small--bottom`, `basespace--bottom--large` and `basespace--large--bottom`
 
 ## `[0.3.0]` — 2017-01-11
 #### Added
