@@ -12,6 +12,9 @@ rename **Unreleased** to the release version and date and start a new empty
 ## `[Unreleased]`
 #### Added
 #### Changed
+
+## `[0.6.0]` — 2017-07-27
+#### Changed
 - Removed premature use of strip-units() function in [`_buttons.scss`](./src/scss/settings/_buttons.scss)
 
 ## `[0.3.2]` — 2017-07-26
