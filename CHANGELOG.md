@@ -13,13 +13,17 @@ rename **Unreleased** to the release version and date and start a new empty
 #### Added
 #### Changed
 
-## `[0.3.2]` — 2017-07-26
+## `[0.6.0]` — 2017-07-27
 #### Changed
-- Removes [`basespace--bottom` mixins](src/scss/tools/_basespace.scss) because they're duplicates of the bog standard basespace mixins
+- Removed premature use of strip-units() function in [`_buttons.scss`](./src/scss/settings/_buttons.scss)
 
-## `[0.3.1]` — 2017-07-18
+## `[0.5.0]` — 2017-07-26
+#### Changed
+- Removes [`basespace--bottom` mixins](./src/scss/tools/_basespace.scss) because they're duplicates of the standard basespace mixins
+
+## `[0.4.0]` — 2017-07-18
 #### Added
-- Adds [`basespace--bottom` mixins](src/scss/tools/_basespace.scss) at standard, small and large sizes: `basespace--bottom`, `basespace--bottom--small`, `basespace--small--bottom`, `basespace--bottom--large` and `basespace--large--bottom`
+- Adds [`basespace--bottom` mixins](./src/scss/tools/_basespace.scss) at standard, small and large sizes: `basespace--bottom`, `basespace--bottom--small`, `basespace--small--bottom`, `basespace--bottom--large` and `basespace--large--bottom`
 
 ## `[0.3.0]` — 2017-01-11
 #### Added

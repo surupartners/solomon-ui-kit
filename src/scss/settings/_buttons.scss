@@ -16,5 +16,10 @@ $alert-inactive: desaturate(mix(white, $button-alert, 50%), 15%);
 $edit-inactive: desaturate(mix(white, $color-alert, 50%), 15%);
 $confirm-inactive: desaturate(mix(white, $button-confirm, 50%), 15%);
 
-$button--small-size: $milli-size * strip-unit($button-base-size);
+/**
+ * [1] Diving by 1em here since we don't yet have access to the strip-units()
+ *     function (since that's in the tools layer which is below the settings
+ *     layer in ITCSS).
+ */
+$button--small-size: $milli-size * ($button-base-size / 1em /* [1] */);
 $button--tiny-size: 0.75em;
