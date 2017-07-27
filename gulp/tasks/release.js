@@ -194,9 +194,11 @@ gulp.task('release-start-branch', ['release-update-other-version-references'], f
         // Running final instruction in setTimeout so it appears after everything else
         setTimeout(function () {
             gutil.log(gutil.colors.bold('↑↑↑ Please review committed changes above'));
-            gutil.log('Also, don\'t forget to', gutil.colors.bold('update CHANGELOG.md'), 'with the changes in this release.')
+            gutil.log('Also, don\'t forget to', gutil.colors.bold('update CHANGELOG.md'), 'with the changes in this release and run', gutil.colors.bold('npm run gulp build'), 'to build assets for the release.')
             gutil.log(
-                'When you\'re ready to finalise this release, run',
+                'When you\'re ready to finalise this release, make sure',
+                gutil.colors.bold('master'), 'and', gutil.colors.bold('dev'),
+                'are both up to date with', gutil.colors.bold('origin'), 'and then run',
                 gutil.colors.bgCyan.black.bold(' npm run complete-release '),
                 'from this branch to merge into master and tag that merge commit with the package version.'
             );
@@ -267,7 +269,7 @@ gulp.task('release-define-type', function () {
     return inquirer.prompt({
         type: 'list',
         name: 'releaseType',
-        message: 'What type of release would you like to do?',
+        message: 'What type of release would you like to do? See http://semver.org for explanations of what each release type entails.',
         choices: ['patch', 'minor', 'major'],
         default: 'minor'
     }).then(function (answers) {
