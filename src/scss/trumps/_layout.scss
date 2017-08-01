@@ -1,0 +1,18 @@
+/**
+ * Add/remove floats
+ */
+.float--right   { float:right !important; }
+.float--left    { float:left !important; }
+.float--none    { float:none !important; }
+
+.clear--right   { clear:right!important; }
+.clear--left    { clear:left !important; }
+.clear--both    { clear:both !important; }
+.clear--none    { clear:none !important; }
+
+/**
+ * Display modes
+ */
+.display--block { display: block !important; }
+.display--inline-block { display: inline-block !important; }
+.display--inherit { display: inherit !important; }
