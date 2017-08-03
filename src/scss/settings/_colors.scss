@@ -39,3 +39,13 @@ $color-success__background: mix(white, $color-success, 75%);
 $color-alert__background: mix(white, $color-alert, 70%);
 $color-error__background: mix(white, $color-error, 70%);
 $color-info__background: $color-info--light;
+
+/**
+ * Island colors
+ */
+$color-island: $color-block-shade;
+$color-island--light: mix(white, $color-block-shade, 50%);
+$color-island--error: mix(white, $color-error, 15%);
+$color-island--success: mix(white, $color-success, 17%);
+$color-island--success--light: mix(white, $color-success, 87%);
+$color-island--alert: mix(white, $color-alert, 60%);
