@@ -10,6 +10,11 @@ rename **Unreleased** to the release version and date and start a new empty
 **Unreleased** section.
 
 ## `[Unreleased]`
+###Added
+###Changed
+###Removed
+
+## `[1.0.0]` - 2017/08/03
 #### Added
 - Box model
 - Trumps visibility
