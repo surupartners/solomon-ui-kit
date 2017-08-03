@@ -1,9 +1,8 @@
 /**
- * Add/remove floats
+ * Many of the layout classes now live in responsive so that they can be applied at different breakpoints.
+ *
+ * If you wish to use these at different breakpoints you can either add that in your project, or move these classes into the responsive file's config.
  */
-.float--right   { float:right !important; }
-.float--left    { float:left !important; }
-.float--none    { float:none !important; }
 
 .clear--right   { clear:right!important; }
 .clear--left    { clear:left !important; }

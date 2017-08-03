@@ -1,0 +1,238 @@
+/**
+ * Responsive Trumps CSS
+ *
+ * Loops through all the breakpoints either defined in the toolkit, or defined in the project using the toolkit, and outputs
+ * responsive css classes that apply styles either only at that breakpoint, or at that breakpoint and up.
+ *
+ * The toolkit does not assume it knows the names of any breakpoints so projects can choose their own.
+ *
+ * Output:
+ * Eg  if there was a breakpoint called "small"
+ *     .flush--bottom   removes margin bottom at all breakpoints.
+ *     .flush--bottom@small removes margin bottom only at the small breakpoint (up to the next breakpoint)
+ *     .flush--bottom@small-and-up removes margin bottom at small breakpoint and above.
+ */
+
+
+/**
+ * Class map
+ * Add any styles here that will be output both plain and with all the breakpoint variations.
+ *
+ * We're going to not use -ends and -sides classes because of css bloat vs using two classes in the html.
+ */
+$responsive-trumps-map: (
+    flush--bottom: (
+        styles: (
+            margin-bottom: 0
+        )
+    ),
+    flush--top: (
+        styles: (
+            margin-top: 0
+        )
+    ),
+    flush--left: (
+        styles: (
+            margin-left: 0
+        )
+    ),
+    flush--right: (
+        styles: (
+            margin-right: 0
+        )
+    ),
+    flush: (
+        styles: (
+            margin: 0
+        )
+    ),
+    push--bottom: (
+        styles: (
+            margin-bottom: $basespace
+        )
+    ),
+    push--top: (
+        styles: (
+            margin-top: $basespace
+        )
+    ),
+    push--left: (
+        styles: (
+            margin-left: $basespace
+        )
+    ),
+    push--right: (
+        styles: (
+            margin-right: $basespace
+        )
+    ),
+    push-small--bottom: (
+        styles: (
+            margin-bottom: $basespace-small;
+        )
+    ),
+    push-small--top: (
+        styles: (
+            margin-top: $basespace-small;
+        )
+    ),
+    push-small--left: (
+        styles: (
+            margin-left: $basespace-small;
+        )
+    ),
+    push-small--right: (
+        styles: (
+            margin-right: $basespace-small;
+        )
+    ),
+    hard--bottom: (
+        styles: (
+            padding-bottom: 0
+        )
+    ),
+    hard--top: (
+        styles: (
+            padding-top: 0
+        )
+    ),
+    hard--left: (
+        styles: (
+            padding-left: 0
+        )
+    ),
+    hard--right: (
+        styles: (
+            padding-right: 0
+        )
+    ),
+    hard: (
+        styles: (
+            padding: 0
+        )
+    ),
+    soft--bottom: (
+        styles: (
+            padding-bottom: $basespace
+        )
+    ),
+    soft--top: (
+        styles: (
+            padding-top: $basespace
+        )
+    ),
+    soft--left: (
+        styles: (
+            padding-left: $basespace
+        )
+    ),
+    soft--right: (
+        styles: (
+            padding-right: $basespace
+        )
+    ),
+    soft: (
+        styles: (
+            padding: $basespace;
+        )
+    ),
+    soft-small--bottom: (
+        styles: (
+            padding-bottom: $basespace-small;
+        )
+    ),
+    soft-small--top: (
+        styles: (
+            padding-top: $basespace-small;
+        )
+    ),
+    soft-small--left: (
+        styles: (
+            padding-left: $basespace-small;
+        )
+    ),
+    soft-small--right: (
+        styles: (
+            padding-right: $basespace-small;
+        )
+    ),
+    soft--small: (
+        styles: (
+            padding: $basespace-small;
+        )
+    ),
+    float--left: (
+        styles: (
+            float: left
+        )
+    ),
+    float--right: (
+        styles: (
+            float: right
+        )
+    ),
+    float--none: (
+        styles: (
+            float: none
+        )
+    ),
+    // Hide from both screenreaders and browsers: h5bp.com/u
+    hidden:  (
+        styles: (
+            display: none,
+            visibility: hidden
+        )
+    ),
+    // Hide visually and from screenreaders, but maintain layout
+    invisible: (
+        styles: (
+            visibility: hidden
+        )
+    )
+);
+
+
+// Output classes without any media queries with plain class names
+@each $class-name, $map in $responsive-trumps-map {
+    .#{$class-name} {
+        $styles: map-get($map, styles);
+        @each $attribute, $value in $styles {
+            #{$attribute}: #{$value} !important;
+        }
+    }
+}
+
+
+@each $label, $map in $breakpoint-map {
+    $min-width: map-get($map, min-width);
+
+    // Get the next breakpoint
+    $next-breakpoint: map-get-next($breakpoint-map, $label);
+    // If the next breakpoint exists, get its min width, otherwise set this breakpoint's max-width to null
+    $max-width: null;
+    @if type_of($next-breakpoint) == map {
+        $max-width: map-get($next-breakpoint, min-width);
+    }
+
+    @media (min-width: $min-width) and (max-width: $max-width) {
+        @each $class-name, $map in $responsive-trumps-map {
+            .#{$class-name}\@#{$label} {
+                $styles: map-get($map, styles);
+                @each $attribute, $value in $styles {
+                    #{$attribute}: #{$value} !important;
+                }
+            }
+        }
+    }
+
+    @media (min-width: $min-width) {
+        @each $class-name, $map in $responsive-trumps-map {
+            .#{$class-name}\@#{$label}-and-up {
+                $styles: map-get($map, styles);
+                @each $attribute, $value in $styles {
+                    #{$attribute}: #{$value} !important;
+                }
+            }
+        }
+    }
+}
