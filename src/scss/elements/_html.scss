@@ -1,0 +1,34 @@
+/**
+ * High-, page-level styling.
+ *
+ * Some parts taken from inuit.css
+ * See https://github.com/inuitcss/base.page/blob/master/_base.page.scss
+ *
+ * 1. Ensure the page always fills at least the entire height of the viewport.
+ * 2. Prevent certain mobile browsers from automatically zooming fonts.
+ * 3. Fonts on OSX will look more consistent with other systems that do not
+ *    render text using sub-pixel anti-aliasing.
+ * 4. Always show the vertical scrollbar - stops the page jumping around when javascript reveals elements that make a
+ *    vertical scrollbar appear.
+ */
+
+html {
+    font: #{($bs/16px)*1em}/#{$baseline * 0.9} $font-body;
+    min-height: 100%; /* [1] */
+    text-rendering: optimizeLegibility;
+    overflow-y: scroll; /* [4] */
+
+    font-feature-settings: "kern";
+    -webkit-text-size-adjust: 100%; /* [2] */
+    -ms-text-size-adjust: 100%; /* [2] */
+    -moz-osx-font-smoothing: grayscale; /* [3] */
+    -webkit-font-smoothing: antialiased; /* [3] */
+
+    line-height: $baseline;
+
+    // global background color for text selection necessary for link fancy underline selection to work
+    // making background color consistent between links and non-links
+    & ::selection {
+        background-color: $color-ui-focus;
+    }
+}
