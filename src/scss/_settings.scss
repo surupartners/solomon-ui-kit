@@ -4,5 +4,6 @@
 @import "settings/defaults";
 @import "settings/breakpoints";
 @import "settings/container";
+@import "settings/loading_spinner";
 @import "settings/typography"; /* depends on defaults */
 @import "settings/buttons"; /* depends on colors and typography */

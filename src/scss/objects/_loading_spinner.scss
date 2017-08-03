@@ -1,0 +1,18 @@
+/**
+ * CSS-only loading spinner
+ *
+ * Can be used stand-alone. Also used on button.is-submittable to show submitting state.
+ */
+
+.loading-spinner {
+    height: $loading-spinner-size;
+    width: $loading-spinner-size;
+    display: block;
+    border-bottom: 0.3em solid rgba(black, 0.1);
+    border-left: 0.3em solid rgba(black, 0.1);
+    border-right: 0.3em solid rgba(black, 0.1);
+    border-top: 0.3em solid rgba(black, 0.25);
+    border-radius: 100%;
+    animation: spin 750ms infinite linear;
+    transform-origin: center;
+}
