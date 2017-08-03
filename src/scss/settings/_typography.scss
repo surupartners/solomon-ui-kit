@@ -6,8 +6,20 @@ $font-body: "Open Sans", arial, sans-serif;
 $font-heading: "Open Sans", arial, sans-serif;
 
 // Font sizes
-$milli-size: ms(-1);
-$micro-size: ms(-2);
+$heading-margin-bottom: $basespace;
+$heading-margin-top: $basespace * 1.3;
 
+$tera-size: ms(17);
+$giga-size: ms(14);
+$mega-size: ms(11);
+$kilo-size: ms(10);
+
+$alpha-size: ms(8);
+$beta-size: ms(6);
+$gamma-size: ms(4);
 $delta-size: ms(2);
 $epsilon-size: ms(1);
+$zeta-size: ms(0);
+
+$milli-size: ms(-1);
+$micro-size: ms(-2);
