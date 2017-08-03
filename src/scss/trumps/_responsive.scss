@@ -20,6 +20,7 @@
  *
  * We're going to not use -ends and -sides classes because of css bloat vs using two classes in the html.
  */
+
 $responsive-trumps-map: (
     flush--bottom: (
         styles: (
@@ -68,22 +69,22 @@ $responsive-trumps-map: (
     ),
     push-small--bottom: (
         styles: (
-            margin-bottom: $basespace-small;
+            margin-bottom: $basespace-small
         )
     ),
     push-small--top: (
         styles: (
-            margin-top: $basespace-small;
+            margin-top: $basespace-small
         )
     ),
     push-small--left: (
         styles: (
-            margin-left: $basespace-small;
+            margin-left: $basespace-small
         )
     ),
     push-small--right: (
         styles: (
-            margin-right: $basespace-small;
+            margin-right: $basespace-small
         )
     ),
     hard--bottom: (
@@ -133,32 +134,32 @@ $responsive-trumps-map: (
     ),
     soft: (
         styles: (
-            padding: $basespace;
+            padding: $basespace
         )
     ),
     soft-small--bottom: (
         styles: (
-            padding-bottom: $basespace-small;
+            padding-bottom: $basespace-small
         )
     ),
     soft-small--top: (
         styles: (
-            padding-top: $basespace-small;
+            padding-top: $basespace-small
         )
     ),
     soft-small--left: (
         styles: (
-            padding-left: $basespace-small;
+            padding-left: $basespace-small
         )
     ),
     soft-small--right: (
         styles: (
-            padding-right: $basespace-small;
+            padding-right: $basespace-small
         )
     ),
     soft--small: (
         styles: (
-            padding: $basespace-small;
+            padding: $basespace-small
         )
     ),
     float--left: (
