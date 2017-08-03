@@ -1,0 +1,95 @@
+/*
+*       Submittable Buttons
+*
+*
+        <button class="js--is-submittable  is-submittable">
+            <span class="button__label">Submit</span>
+            <span class="loading-spinner__wrapper">
+                <span class="loading-spinner"></span>
+            </span>
+        </button>
+*
+*
+        JS
+
+        $('.js--is-submittable  is-submittable').click(function () {
+            $(this).addClass('submitting');
+            $(this).addClass('button--disabled');
+        });
+*
+*
+*/
+
+
+/* button, .button */.is-submittable {
+    position: relative;
+    overflow: hidden;
+    transition: 500ms all;
+
+    // Wrap text part of button in element so it can be independently animated.
+    // CSS transform gives it it's own rendering layer so it's smoother.
+    .button__label {
+        display: inline-block;
+        transform: translate(0, 0);
+        will-change: transform;
+    }
+
+    // Positioning and styles for spinner when used in button.is-submittable
+    .loading-spinner__wrapper {
+        display: inline-block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transform: translate(-1.8em, 0);
+        opacity: 0;
+        will-change: transform, opacity;
+    }
+
+    .loading-spinner {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        margin-top: $loading-spinner-size / -2;
+        border-top: 0.3em solid rgba(white, 0.9);
+    }
+
+    // Makes loading-spinner more visible on the grey secondary button
+    &.button--secondary .loading-spinner {
+        border-top-color: rgba(black, 0.25);
+    }
+
+    //
+    // Submitting state:
+    //
+    .button__label,
+    .loading-spinner__wrapper {
+        transition: 200ms all ease-in-out;
+    }
+
+
+    // don't animate button label moving if there's an icon in the button
+    &[class*=ss-] .button__label {
+        transition: all 0s;
+    }
+
+    // When button is clicked .submitting is appended by JS
+    &.submitting {
+
+        .loading-spinner__wrapper {
+            transform: translate(0.75em, 0);
+            opacity: 1;
+        }
+
+        .button__label {
+            transform: translate(1.1em, 0);
+        }
+
+        // hide the button's icon which is replaced with the spinner
+        &[class*=ss-]:before {
+            content: none;
+        }
+    }
+
+}

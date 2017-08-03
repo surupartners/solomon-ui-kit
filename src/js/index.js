@@ -8,7 +8,8 @@
  */
 
 var FormSubmitAnimator               = require('FormSubmitAnimator'),
-    DisabledUnlessHasCheckedElements = require('DisabledUnlessHasCheckedElements');
+    DisabledUnlessHasCheckedElements = require('DisabledUnlessHasCheckedElements'),
+    ConfirmButtonAnimator            = require('ConfirmButtonAnimator');
 
 // Register submit events for form animations
 FormSubmitAnimator.registerFormSubmitListener();
