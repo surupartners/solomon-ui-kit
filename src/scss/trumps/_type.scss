@@ -1,0 +1,43 @@
+/**
+ * Upper/lower case
+ */
+
+.text--uppercase {
+    text-transform: uppercase !important;
+}
+
+.text--lowercase {
+    text-transform: lowercase !important;
+}
+
+
+/**
+ * Text alignment
+ */
+.text--right {
+    text-align: right !important;
+}
+
+.text--left {
+    text-align: left !important;
+}
+
+.text--center {
+    text-align: center !important;
+}
+
+
+/**
+ * White space
+ */
+.text--normalwrap {
+    white-space: normal !important;
+}
+
+.text--nowrap {
+    white-space: nowrap !important;
+}
+
+.text--pre {
+    white-space: pre !important;
+}
