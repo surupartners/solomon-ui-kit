@@ -1,8 +1,8 @@
 @import "modularscale-sass/stylesheets/modular-scale";
 
-@import "settings/breakpoints";
 @import "settings/colors";
-@import "settings/typography";
-@import "settings/buttons"; /* depends on colors and typography */
-@import "settings/container";
 @import "settings/defaults";
+@import "settings/breakpoints";
+@import "settings/container";
+@import "settings/typography"; /* depends on defaults */
+@import "settings/buttons"; /* depends on colors and typography */
