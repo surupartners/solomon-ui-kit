@@ -1,3 +1,11 @@
+/**
+ * Functions
+ *
+ * Exists as the top layer so it can be used by the settings layer if necessary.
+ * Contains only functions, that wouldn't output any actual css, ie could be used in a setting to assign a variable.
+ * Don't require any variables to work (which aren't created until the settings layer which is imported after).
+ */
+
 // [SublimeLinter scss-@disable:true]
 
 /**
@@ -17,221 +25,6 @@
 }
 
 /**
- * Applies cross-browser white-space styles
- */
-@mixin white-space($wrap-space) {
-    @if $wrap-space == "pre-wrap" {
-        white-space: #{-moz-}$wrap-space;   // Firefox 1.0-2.0
-        white-space: $wrap-space;           // current browsers
-    } @else {
-        white-space: $wrap-space;
-    }
-}
-
-/**
- * Defines a CSS property in rem with px fallback
- *
- *
- * DISABLED ON 8/12/16 BY MATT CHOLAWO as only really ie8 doesn't support rem.
- * Leave the mixin until uses of it are removed.  It just outputs the style with rem units now.
- *
- * e.g.
-
-   .foo {
-       @include rem(margin, 1, 0.5, 2, 0.5);
-       @include rem(font-size, 1);
-       @include rem(border, 0.25, solid blue, !important);
-   }
-   .foo {
-       margin: 16px 8px 32px 8px;
-       margin: 1rem 0.5rem 2rem 0.5rem;
-       font-size: 16px;
-       font-size: 1rem;
-       border: 4px solid blue, !important;
-       border: 0.25rem solid blue, !important;
-   }
-
- */
-@mixin rem($property, $values...) {
-    $max: length($values);
-    $suffix: "";
-    $px-values: "";
-    $rem-values: "";
-
-    @for $i from 1 through $max {
-        @if type-of(nth($values, $i)) == "number" {
-            $value: strip-unit(nth($values, $i));
-            $px-values: #{$px-values + $value*16}px;
-        } @else {
-            $px-values: #{$px-values + nth($values, $i)};
-        }
-
-        @if $i < $max {
-            $px-values: #{$px-values + " "};
-        }
-    }
-
-    @for $i from 1 through $max {
-        @if type-of(nth($values, $i)) == "number" {
-            $value: strip-unit(nth($values, $i));
-            $rem-values: #{$rem-values + $value}rem;
-        } @else {
-            $rem-values: #{$rem-values + nth($values, $i)};
-        }
-
-        @if $i < $max {
-            $rem-values: #{$rem-values + ' '};
-        }
-    }
-
-    // #{$property}: $px-values + $suffix;
-    #{$property}: $rem-values + $suffix;
-}
-
-/**
- * CSS arrows!!! But... before you read on, you might want to grab a coffee...
- *
- * This mixin creates a CSS arrow on a given element. We can have the arrow
- * appear in one of 12 locations, thus:
- *
- *       01    02    03
- *    +------------------+
- * 12 |                  | 04
- *    |                  |
- * 11 |                  | 05
- *    |                  |
- * 10 |                  | 06
- *    +------------------+
- *       09    08    07
- *
- * You pass this position in along with a desired arrow color and optional
- * border color, for example:
- *
- * `@include arrow(top, left, red)`
- *
- * for just a single, red arrow, or:
- *
- * `@include arrow(bottom, center, red, black)`
- *
- * which will create a red triangle with a black border which sits at the bottom
- * center of the element. Call the mixin thus:
- *
-   .foo{
-       background-color:#BADA55;
-       border:1px solid #ACE;
-       @include arrow(top, left, #BADA55, #ACE);
-   }
- *
- */
-@mixin arrow($arrow-edge, $arrow-location, $arrow-color, $border-color: $arrow-color) {
-
-    @if $arrow-edge == top{
-
-        @extend %arrow--top;
-
-        &:before {
-            border-bottom-color: $border-color!important;
-        }
-
-        &:after {
-            border-bottom-color: $arrow-color!important;
-        }
-
-        @if $arrow-location == left{
-            @extend %arrow--left;
-        }
-
-        @if $arrow-location == center{
-            @extend %arrow--center;
-        }
-
-        @if $arrow-location == right{
-            @extend %arrow--right;
-        }
-
-    }
-
-    @if $arrow-edge == right{
-
-        @extend %arrow--far;
-
-        &:before {
-            border-left-color: $border-color!important;
-        }
-
-        &:after {
-            border-left-color: $arrow-color!important;
-        }
-
-        @if $arrow-location == top{
-            @extend %arrow--upper;
-        }
-
-        @if $arrow-location == center{
-            @extend %arrow--middle;
-        }
-
-        @if $arrow-location == bottom{
-            @extend %arrow--lower;
-        }
-
-    }
-
-    @if $arrow-edge == bottom{
-
-        @extend %arrow--bottom;
-
-        &:before {
-            border-top-color: $border-color!important;
-        }
-
-        &:after {
-            border-top-color: $arrow-color!important;
-        }
-
-        @if $arrow-location == left{
-            @extend %arrow--left;
-        }
-
-        @if $arrow-location == center{
-            @extend %arrow--center;
-        }
-
-        @if $arrow-location == right{
-            @extend %arrow--right;
-        }
-
-    }
-
-    @if $arrow-edge == left{
-
-        @extend %arrow--near;
-
-        &:before {
-            border-right-color: $border-color!important;
-        }
-
-        &:after {
-            border-right-color: $arrow-color!important;
-        }
-
-        @if $arrow-location == top{
-            @extend %arrow--upper;
-        }
-
-        @if $arrow-location == center{
-            @extend %arrow--middle;
-        }
-
-        @if $arrow-location == bottom{
-            @extend %arrow--lower;
-        }
-
-    }
-
-}
-
-/**
  * Converts px to rem
  */
 @function px-to-rem($px-size) {
@@ -244,4 +37,83 @@
  */
 @function rem-to-px($rem-size) {
     @return strip-unit($rem-size) * strip-unit($basesize) * 1px;
+}
+
+
+/// Function to get next map item
+/// returns next map item or fallback value if map, key or next item does not exist
+///
+/// https://gist.github.com/agorilla/9df052eb1e15d8aea446
+///
+/// @param {Map} $map - Sass list map
+/// @param {String} $key - List map key
+/// @param {String} $fallback (false) - Fallback value if map, key or next item does not exist
+///
+/// @example scss - Usage
+/// $map: (
+///     a: 100px,
+///     b: 200px
+/// );
+///
+/// .foo {
+///     width: map-get-next($map, a);
+/// }
+///
+/// .bar {
+/// width: map-get-next($map, b, auto);
+/// }
+///
+/// @example css - CSS output
+/// .foo {
+///     width: 200px;
+/// }
+///
+/// .bar {
+///     width: auto;
+/// }
+@function map-get-next($map, $key, $fallback: false) {
+
+    // Check if map is valid
+    @if type_of($map) == map {
+
+        // Check if key exists in map
+        @if map_has_key($map, $key) {
+
+            // Init index counter variable
+            $i: 0;
+
+            // Init key index
+            $key-index: false;
+
+            // Traverse map for key
+            @each $map-key, $map-value in $map {
+                // Update index
+                $i: $i + 1;
+
+                // If map key found, set key index
+                @if $map-key == $key {
+                    $key-index: $i;
+                }
+
+                // If next index return next value
+                @if $i == $key-index + 1 {
+                    @return $map-value;
+                }
+
+                // If last entry return false
+                @if $i == length($map) {
+                    @return $fallback;
+                }
+            }
+
+            @warn 'No next map item for key #{$key}';
+            @return $fallback;
+        }
+
+        @warn 'No valid key #{$key} in map';
+        @return $fallback;
+    }
+
+    @warn 'No valid map';
+    @return $fallback;
 }

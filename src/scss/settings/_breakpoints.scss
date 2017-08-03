@@ -1,10 +1,20 @@
-// Media breakpoints
-
-$bp-small : 30em;
-$bp-med : 45em;
-$bp-large : 60em;
-$bp-xl : 75em;
-$bp-xxl : 90em;
-
-// Breakpoint used for navigation switching
-$bp-nav-desktop : $bp-large;
+$breakpoint-map: (
+    tiny: (
+        min-width: null,
+    ),
+    small: (
+        min-width: 30em,
+    ),
+    medium: (
+        min-width: 45em,
+    ),
+    large: (
+        min-width: 60em,
+    ),
+    xl: (
+        min-width: 75em,
+    ),
+    xxl: (
+        min-width: 90em,
+    )
+);

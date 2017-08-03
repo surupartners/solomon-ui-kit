@@ -1,12 +1,11 @@
 // Base sizes
-$basesize: 15px !default;
+$basesize: 16px !default;
 $bs: $basesize;
 $baseline: 1.7;
 $bl: $baseline;
-$basespace: $baseline * 1rem / 3; /* Should almost always be used with the rem()
-                                     mixin to provide a px fallback */
-$basespace-tiny: $baseline * 1rem / 4.5;
-$basespace-small: $baseline * 1rem / 3.5;
-$basespace-med: $baseline * 1rem / 2.5;
-$basespace-large: $baseline * 1rem / 1.75;
-$basespace-xl: $baseline * 1rem;
+$basespace: $baseline * 1em / 3;
+$basespace-tiny: $baseline * 1em / 4.5;
+$basespace-small: $baseline * 1em / 3.5;
+$basespace-med: $baseline * 1em / 2.5;
+$basespace-large: $baseline * 1em / 1.75;
+$basespace-xl: $baseline * 1em;

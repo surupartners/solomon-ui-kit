@@ -1,0 +1,17 @@
+/**
+ * Many of the layout classes now live in responsive so that they can be applied at different breakpoints.
+ *
+ * If you wish to use these at different breakpoints you can either add that in your project, or move these classes into the responsive file's config.
+ */
+
+.clear--right   { clear:right!important; }
+.clear--left    { clear:left !important; }
+.clear--both    { clear:both !important; }
+.clear--none    { clear:none !important; }
+
+/**
+ * Display modes
+ */
+.display--block { display: block !important; }
+.display--inline-block { display: inline-block !important; }
+.display--inherit { display: inherit !important; }

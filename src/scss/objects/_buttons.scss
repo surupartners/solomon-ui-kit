@@ -1,0 +1,376 @@
+/*
+
+<button type="button" class="button button--primary">Button</button>
+<button type="button" disabled class="button button--primary--inactive">Button</button>
+
+<ul class=button--group">
+    <li><a href="#" class="button button--primary">Primary</a></li>
+    <li><a href="#" class="button button--secondary">Secondary</a></li>
+    <li><a href="#" class="button button--alert">Alert</a></li>
+    <li><a href="#" class="button button--confirm">Confirm</a></li>
+</ul>
+
+*/
+.button {
+    @include button;
+}
+
+// Links can be buttons
+a.button {
+    text-decoration: none;
+}
+
+/**
+ * Button sizes
+ */
+
+.button--large.button--large {
+    font-size: $delta-size * strip-unit($button-base-size);
+    margin-top: 0;
+}
+
+.button--small.button--small {
+    font-size: $button--small-size;
+    padding: $button-base-end-padding $button-base-side-padding;
+}
+
+.button--tiny.button--tiny {
+    font-size: $button--tiny-size; // .micro is a bit too small to read
+    padding: $button-base-end-padding/1.5 $button-base-side-padding/1.5;
+
+    // Make icons in the buttons smaller, either icons where the class is on the button, or where the icon is inside the button
+    &[class^="ss-"]:before, &[class*=" ss-"]:before,
+    [class^="ss-"]:before, [class*=" ss-"]:before{
+        font-size: 0.9em;
+    }
+}
+
+.button--expanded {
+    width: 100%;
+    margin-right: 0;
+    text-align: center;
+}
+
+.button--narrow.button--narrow {
+    padding-left: $button-base-end-padding;
+    padding-right: $button-base-end-padding;
+}
+
+/**
+ * Button Colours
+ */
+
+.button--secondary {
+    background: $button-secondary;
+    border: 1px solid darken($button-secondary, 10%);
+    color: mix($color-text, $button-secondary, 75%);
+
+    &:hover,
+    &:active,
+    &:focus {
+        background: darken($button-secondary, 7%);
+        color: mix($color-text, $button-secondary, 90%);
+        border: 1px solid darken($button-secondary, 20%);
+    }
+
+    // Alternative for input-group buttons
+    .input-group__button & {
+        border: 0;
+        box-shadow: inset 0 0 0 1px $color-ui-line;
+    }
+
+    .input-group__button &:hover,
+    .input-group__button &:active,
+    .input-group__button &:focus {
+        border: 0;
+        box-shadow: inset 0 0 0 1px darken($color-ui-line, 7%);
+    }
+}
+
+.button--alert {
+    background: $button-alert;
+    border: 1px solid darken($button-alert, 5%);
+
+    &:hover,
+    &:active,
+    &:focus {
+        background: darken($button-alert, 12%);
+        border: 1px solid darken($button-alert, 18%);
+    }
+
+    // Alternative for input-group buttons
+    .input-group__button & {
+        border: 0;
+        box-shadow: inset 0 0 0 1px darken($button-alert, 5%);
+    }
+
+    .input-group__button &:hover,
+    .input-group__button &:active,
+    .input-group__button &:focus {
+        border: 0;
+        box-shadow: inset 0 0 0 1px darken($button-alert, 18%);
+    }
+}
+
+.button--confirm,
+.button--success {
+    background: $button-confirm;
+    border: 1px solid darken($button-confirm, 5%);
+
+    &:hover,
+    &:active,
+    &:focus {
+        background: darken($button-confirm, 7%);
+        border: 1px solid darken($button-confirm, 10%);
+    }
+}
+
+.button--info {
+    vertical-align: bottom;
+    padding: 0.3em 0.55em;
+    margin: 0;
+    background: $color-info--light;
+    color: darken($color-info, 20%);
+    font-size: 1.7em;
+    font-weight: bold;
+    border: 1px solid $color-info;
+
+    &:hover,
+    &:active,
+    &:focus {
+        background: darken($color-info--light, 5%);
+        color: darken($color-info, 35%);
+        border: 1px solid $color-info;
+    }
+}
+
+.button--edit {
+    background-color: $color-alert;
+    border: 1px solid darken($color-alert, 5%);
+
+    &:hover,
+    &:active,
+    &:focus {
+        background-color: darken($color-alert, 1%);
+        border: 1px solid darken($color-alert, 5%);
+    }
+}
+
+.button--white {
+    background-color: white;
+    color: black;
+
+    &:hover,
+    &:active,
+    &:focus {
+        background-color: white;
+        color: black;
+    }
+}
+
+
+/**
+ * Inactive buttons
+ */
+.button--inactive,
+.button--disabled,
+button[disabled] {
+    &,
+    &:hover,
+    &:active,
+    &:focus {
+        cursor: not-allowed;
+        background: $primary-inactive;
+        border: 1px solid darken($primary-inactive, 5%);
+        color: mix(white, $primary-inactive, 80%);
+        box-shadow: none;
+        outline: none;
+    }
+
+    &.button--secondary {
+        &,
+        &:hover,
+        &:active,
+        &:focus {
+            background: $secondary-inactive;
+            border: 1px solid darken($secondary-inactive, 5%);
+            color: mix($color-text, $secondary-inactive, 30%);
+        }
+    }
+
+    &.button--alert {
+        &,
+        &:hover,
+        &:active,
+        &:focus {
+            background: $alert-inactive;
+            border: 1px solid darken($alert-inactive, 5%);
+            color: mix(white, $alert-inactive, 80%);
+        }
+    }
+
+    &.button--confirm,
+    &.button--success {
+        &,
+        &:hover,
+        &:active,
+        &:focus {
+            background: $confirm-inactive;
+            border: 1px solid darken($confirm-inactive, 5%);
+            color: mix(white, $confirm-inactive, 80%);
+        }
+    }
+
+    &.button--edit {
+        &,
+        &:hover,
+        &:active,
+        &:focus {
+            background: $edit-inactive;
+            border: 1px solid darken($edit-inactive, 5%);
+            color: mix(white, $edit-inactive, 80%);
+        }
+    }
+
+    &.button--white {
+        &,
+        &:hover,
+        &:active,
+        &:focus {
+            background-color: white;
+            color: black;
+        }
+    }
+}
+
+
+/**
+ * Hollow button
+ *
+ *  Requires the text to be in a span for the fancy underline to work properly
+ *  <button class="button--hollow"><span>Button text</span></button>
+ *
+ */
+.button--hollow {
+    $button-hollow-scale: 0.85;
+    font-size: $button-base-size * $button-hollow-scale;
+    padding: ($button-base-end-padding / $button-hollow-scale) 1em;
+    background: none;
+    border-color: transparent;
+    color: $color-link;
+    text-transform: uppercase;
+    font-weight: bold;
+    line-height: $bl;
+
+    &:hover,
+    &:focus,
+    &:active {
+        color: $color-link-hover;
+        background: none;
+        border-color: transparent;
+        outline: none;
+        box-shadow: none;
+    }
+
+    // Improves button spacing between hollow and 'normal' buttons
+    button:not(.button--hollow) + &,
+    .button:not(.button--hollow) + &,
+    & + button:not(.button--hollow),
+    & + .button:not(.button--hollow) {
+        margin-left: -0.25em / $button-hollow-scale;
+    }
+}
+
+/**
+ * Inline button
+ * Allow use of button element as if it were a plain link
+ */
+.button--inline {
+    font-size: 1em;
+    display: inline;
+    font-weight: normal;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    background: none;
+    color: $color-link;
+    line-height: $bl;
+    vertical-align: inherit;
+    text-align: inherit;
+
+    // Needs a fixed height that's smaller than line-height so that fancy underline
+    // is just beneath the text
+    height: $bs * 1.5;
+
+    &:hover,
+    &:focus,
+    &:active {
+        color: $color-link-hover;
+        background: none;
+        text-decoration: underline;
+        border: 0;
+    }
+
+    // Sizes
+    &.button--small {
+        font-size: $button--small-size; // magic number
+        height: $bs * 1.2265;
+    }
+
+    &.button--tiny {
+        font-size: $button--tiny-size; // magic number
+        height: $bs * 1.1675;
+    }
+
+    // Colours
+    &.button--secondary {
+        color: $button-secondary;
+
+        &:hover,
+        &:focus,
+        &:active {
+            color: darken($button-secondary, 7%);
+        }
+    }
+
+    &.button--alert {
+        color: $button-alert;
+
+        &:hover,
+        &:focus,
+        &:active {
+            color: darken($button-alert, 12%);
+        }
+    }
+
+    &.button--confirm,
+    &.button--success {
+        color: $button-confirm;
+
+        &:hover,
+        &:focus,
+        &:active {
+            color: darken($button-confirm, 7%);
+        }
+    }
+
+    &.button--info {
+        color: $color-info--light;
+
+        &:hover,
+        &:focus,
+        &:active {
+            color: darken($color-info--light, 5%);
+        }
+    }
+
+    &.button--edit {
+        color: $color-alert;
+
+        &:hover,
+        &:focus,
+        &:active {
+            color: darken($color-alert, 1%);
+        }
+    }
+}

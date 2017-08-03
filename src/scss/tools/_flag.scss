@@ -1,0 +1,58 @@
+/**
+<div class="flag">
+    <div class="flag__image">
+        <img src="" alt="">
+    </div>
+    <div class="flag__body">
+        <p></p>
+    </div>
+</div>
+*/
+
+@mixin flag {
+    display: table;
+    width: 100%;
+
+    & > .flag__image,
+    & > .flag__body {
+        display: table-cell;
+        vertical-align: middle;
+    }
+
+    &.flag--top > .flag__image,
+    &.flag--top > .flag__body, {
+        vertical-align: top;
+    }
+
+    &.flag--bottom > .flag__image,
+    &.flag--bottom > .flag__body {
+        vertical-align: bottom;
+    }
+
+    & > .flag__image {
+        @include rem(padding-right, $basespace);
+        white-space: nowrap;
+
+        > img {
+            display: block;
+            max-width: none;
+        }
+    }
+
+    /**
+    * Reversed image location (right instead of left).
+    */
+    &.flag--rev > .flag__image {
+        padding-right: 0;
+        @include rem(padding-left, $basespace);
+    }
+
+    & > .flag__body {
+        width: 100%;
+    }
+
+    & > .flag__body,
+    .flag__body > :last-child {
+        margin-bottom: 0;
+    }
+}

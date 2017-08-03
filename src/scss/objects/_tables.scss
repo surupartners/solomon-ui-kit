@@ -1,0 +1,53 @@
+/**
+ * Table dividers
+ */
+
+.table--dividers {
+    thead {
+        border-bottom: 1px solid $color-ui-line;
+    }
+
+    tbody tr + tr {
+        border-top: 1px solid $color-ui-line;
+    }
+
+    .no--divider {
+        border-top: none;
+    }
+}
+
+/**
+ * Hoverable table rows
+ *
+ * Similar style to block-list--hoverable
+ */
+
+.table--row-hoverable {
+    tbody tr {
+      td:first-child {
+        // Need to give a transparent border to all elements so that layout doesn't change on hover
+        border-left: 0.25em solid transparent;
+      }
+    }
+
+    tbody tr:hover {
+        td:first-child {
+                border-color: $color-ui-focus;
+            }
+
+        cursor: pointer;
+        background-color: $color-block-hover;
+    }
+}
+
+/**
+ * Show that a row is deactivated.   Used in users/list
+ */
+.table-row-deactivated {
+    background-color: lighten($color-grey, 48%);
+    color: $color-grey;
+
+    a {
+        color: $color-grey;
+    }
+}

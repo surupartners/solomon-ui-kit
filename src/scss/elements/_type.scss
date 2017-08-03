@@ -1,0 +1,28 @@
+h1, h2, h3, h4, h5, h6 {
+    margin-top: $heading-margin-top;
+    margin-bottom: $heading-margin-bottom;
+}
+
+h1 {
+    font-size: $alpha-size;
+}
+
+h2 {
+    font-size: $beta-size;
+}
+
+h3 {
+    font-size: $gamma-size;
+}
+
+h4 {
+    font-size: $delta-size;
+}
+
+h5 {
+    font-size: $epsilon-size;
+}
+
+h6 {
+    font-size: $zeta-size;
+}

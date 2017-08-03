@@ -1,0 +1,14 @@
+/**
+<div class="flag">
+    <div class="flag__image">
+        <img src="" alt="">
+    </div>
+    <div class="flag__body">
+        <p></p>
+    </div>
+</div>
+*/
+
+.flag {
+    @include flag;
+}
