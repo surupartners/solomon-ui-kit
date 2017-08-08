@@ -60,7 +60,7 @@ $island-padding: 1em;
 
     margin: -$island-padding;
     margin-bottom: $island-padding;
-    padding: $island-padding;
+    padding: $island-padding / 2 $island-padding;
 
     .island--info & {
         /* Info islands shouldn't use these. Use normal headings instead. */
