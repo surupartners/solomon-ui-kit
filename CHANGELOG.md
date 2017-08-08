@@ -14,6 +14,12 @@ rename **Unreleased** to the release version and date and start a new empty
 ###Changed
 ###Removed
 
+## `[1.0.1]` - 2017/08/08
+#### Changed
+- Tweak to island title bar padding
+#### Added
+- .micro and .milli type helper classes
+
 ## `[1.0.0]` - 2017/08/03
 #### Added
 - Box model
