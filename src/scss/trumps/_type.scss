@@ -1,4 +1,31 @@
 /**
+ * Colors
+ */
+.text--secondary {
+    color: grey;
+}
+
+.text--tertiary {
+    color: grey;
+    font-style: italic;
+}
+
+.text--alert {
+    color: $color-alert;
+    font-weight: bold;
+}
+
+.text--success {
+    color: $color-success;
+    font-weight: bold;
+}
+
+.text--error {
+    color: $color-error !important;
+    font-weight: bold !important;
+}
+
+/**
  * Upper/lower case
  */
 
@@ -41,3 +68,15 @@
 .text--pre {
     white-space: pre !important;
 }
+
+/**
+ * Weight
+ */
+
+.weight--light          { @include weight--light; }
+
+.weight--normal         { @include weight--normal; }
+
+.weight--semibold       { @include weight--semibold; }
+
+.weight--bold           { @include weight--bold; }
