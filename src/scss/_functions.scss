@@ -117,3 +117,19 @@
     @warn 'No valid map';
     @return $fallback;
 }
+
+/**
+ * Get breakpoint min width
+ *
+ * If you have a breakpoint-map that is like that in breakpoints.scss, use this function to get breakpoint min-width values out of it.
+ *
+ * @param  $breakpoint the name of the breakpoint you want to get the min width of
+ * @return the min width of that breakpoint.
+ */
+@function get-breakpoint-min-width($breakpoint) {
+
+    $map: map-get($breakpoint-map, $breakpoint);
+
+    @return map-get($map, min-width);
+}
+
