@@ -14,7 +14,17 @@ rename **Unreleased** to the release version and date and start a new empty
 ###Changed
 ###Removed
 
-## `[1.0.1]` - 2017/08/08
+## `[1.2.0]` - 2017/09/08
+###Added
+- Type trump classes for colors and font weight
+- Large soft and push layout classes
+- Function to get a breakpoint min-width value from a breakpoint map
+###Changed
+- Increase margin bottom for trump classes and island.
+- Increase left padding for island--info
+- Sets a line height for headings and heading object classes.
+
+## `[1.1.0]` - 2017/08/08
 #### Changed
 - Tweak to island title bar padding
 #### Added
