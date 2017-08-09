@@ -17,7 +17,7 @@ $island-padding: 1em;
     background: $color-island;
     border-radius: 0.125em;
     border: 1px solid $color-ui-line-light;
-    margin-bottom: $island-padding;
+    margin-bottom: $basespace-xl;
 
     padding: $island-padding;
 
@@ -110,6 +110,7 @@ $island-padding: 1em;
     position: relative;
     border: 0;
     box-shadow: inset 0.35em 0 0 $color-info;
+    padding-left: $island-padding + 0.35em; /* add box shadow width to the left padding */
     background: $color-info--light;
     color: saturate(mix($color-text, $color-info--light, 90%), 10%);
 
