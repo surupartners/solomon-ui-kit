@@ -87,6 +87,31 @@ $responsive-trumps-map: (
             margin-right: $basespace-large
         )
     ),
+    push-large--bottom: (
+        styles: (
+            margin-bottom: $basespace-xl * 2.5
+        )
+    ),
+    push-large--top: (
+        styles: (
+            margin-bottom: $basespace-xl * 2.5
+        )
+    ),
+    push-large--left: (
+        styles: (
+            margin-left: $basespace-xl * 2.5
+        )
+    ),
+    push-large--right: (
+        styles: (
+            margin-right: $basespace-xl * 2.5
+        )
+    ),
+    push-large: (
+        styles: (
+            margin: $basespace-xl * 2.5
+        )
+    ),
     hard--bottom: (
         styles: (
             padding-bottom: 0
@@ -157,9 +182,34 @@ $responsive-trumps-map: (
             padding-right: $basespace-large
         )
     ),
-    soft--small: (
+    soft-small: (
         styles: (
             padding: $basespace-large
+        )
+    ),
+    soft-large: (
+        styles: (
+            padding: $basespace-xl * 2.5
+        )
+    ),
+    soft-large--bottom: (
+        styles: (
+            padding-bottom: $basespace-xl * 2.5
+        )
+    ),
+    soft-large--top: (
+        styles: (
+            padding-top: $basespace-xl * 2.5
+        )
+    ),
+    soft-large--left: (
+        styles: (
+            padding-left: $basespace-xl * 2.5
+        )
+    ),
+    soft-large--right: (
+        styles: (
+            padding-right: $basespace-xl * 2.5
         )
     ),
     float--left: (
