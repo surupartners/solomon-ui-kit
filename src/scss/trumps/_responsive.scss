@@ -49,42 +49,42 @@ $responsive-trumps-map: (
     ),
     push--bottom: (
         styles: (
-            margin-bottom: $basespace
+            margin-bottom: $basespace-xl
         )
     ),
     push--top: (
         styles: (
-            margin-top: $basespace
+            margin-top: $basespace-xl
         )
     ),
     push--left: (
         styles: (
-            margin-left: $basespace
+            margin-left: $basespace-xl
         )
     ),
     push--right: (
         styles: (
-            margin-right: $basespace
+            margin-right: $basespace-xl
         )
     ),
     push-small--bottom: (
         styles: (
-            margin-bottom: $basespace-small
+            margin-bottom: $basespace-large
         )
     ),
     push-small--top: (
         styles: (
-            margin-top: $basespace-small
+            margin-top: $basespace-large
         )
     ),
     push-small--left: (
         styles: (
-            margin-left: $basespace-small
+            margin-left: $basespace-large
         )
     ),
     push-small--right: (
         styles: (
-            margin-right: $basespace-small
+            margin-right: $basespace-large
         )
     ),
     hard--bottom: (
@@ -114,52 +114,52 @@ $responsive-trumps-map: (
     ),
     soft--bottom: (
         styles: (
-            padding-bottom: $basespace
+            padding-bottom: $basespace-xl
         )
     ),
     soft--top: (
         styles: (
-            padding-top: $basespace
+            padding-top: $basespace-xl
         )
     ),
     soft--left: (
         styles: (
-            padding-left: $basespace
+            padding-left: $basespace-xl
         )
     ),
     soft--right: (
         styles: (
-            padding-right: $basespace
+            padding-right: $basespace-xl
         )
     ),
     soft: (
         styles: (
-            padding: $basespace
+            padding: $basespace-xl
         )
     ),
     soft-small--bottom: (
         styles: (
-            padding-bottom: $basespace-small
+            padding-bottom: $basespace-large
         )
     ),
     soft-small--top: (
         styles: (
-            padding-top: $basespace-small
+            padding-top: $basespace-large
         )
     ),
     soft-small--left: (
         styles: (
-            padding-left: $basespace-small
+            padding-left: $basespace-large
         )
     ),
     soft-small--right: (
         styles: (
-            padding-right: $basespace-small
+            padding-right: $basespace-large
         )
     ),
     soft--small: (
         styles: (
-            padding: $basespace-small
+            padding: $basespace-large
         )
     ),
     float--left: (
