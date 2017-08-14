@@ -3,6 +3,11 @@
 <button type="button" class="button button--primary">Button</button>
 <button type="button" disabled class="button button--primary--inactive">Button</button>
 
+NOTE regarding buttons and icons.   You might in your project add an icon class to a button to output the icon eg
+<button class="ss-check">Button</button>
+If you use a hollow or inline button, and you don't want the icon to have an underline, but the button's text inside a <span>
+and then we can underline the span but not the icon (because an underlined icon often looks bad).
+
 <ul class=button--group">
     <li><a href="#" class="button button--primary">Primary</a></li>
     <li><a href="#" class="button button--secondary">Secondary</a></li>
