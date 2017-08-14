@@ -53,6 +53,7 @@ a.button {
 .button--expanded {
     width: 100%;
     margin-right: 0;
+    margin-left: 0; // because buttons get a margin left when combined with .float--right class.
     text-align: center;
 }
 
