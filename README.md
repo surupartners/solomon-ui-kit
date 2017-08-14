@@ -14,7 +14,7 @@ To include the kit in your own projects, include it via its Git URL in the
 
 ```
 "dependencies": {
-  "solomon-ui-kit": "https://hbrown@bitbucket.org/hbrown/npm-test.git#1.2.0",
+  "solomon-ui-kit": "https://hbrown@bitbucket.org/hbrown/npm-test.git#1.3.0",
 },
 ```
 
@@ -24,7 +24,7 @@ Alternatively, you can use the NPM CLI to add it as a dependency to an existing
 NPM installation like so:
 
 ```
-npm install https://hbrown@bitbucket.org/hbrown/npm-test.git#1.2.0 --save
+npm install https://hbrown@bitbucket.org/hbrown/npm-test.git#1.3.0 --save
 ```
 
 ## Contributing
@@ -70,7 +70,7 @@ To make a release of code in the `dev` which is ready for release:
    latest changes have all been pushed to the remote.
 1. Check on Github that `dev` is passing all CI builds and tests.
 1. Run `npm run start-release` to automatically bump the package version numbers
-   and start a `release/x.y.z` branch (e.g. `release/1.2.0`). You should now be
+   and start a `release/x.y.z` branch (e.g. `release/1.3.0`). You should now be
    on your release branch.
 1. Update [`CHANGELOG.md`](CHANGELOG.md)
 1. Build front-end assets by running `npm run gulp build` and check they all work
