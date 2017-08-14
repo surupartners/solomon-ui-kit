@@ -253,7 +253,7 @@ button[disabled] {
 /**
  * Hollow button
  *
- *  Requires the text to be in a span for the fancy underline to work properly
+ *  Requires the text to be in a span for the underline to work properly
  *  <button class="button--hollow"><span>Button text</span></button>
  *
  */
@@ -276,6 +276,10 @@ button[disabled] {
         border-color: transparent;
         outline: none;
         box-shadow: none;
+
+        span {
+            text-decoration: underline;
+        }
     }
 
     // Improves button spacing between hollow and 'normal' buttons
@@ -311,10 +315,12 @@ button[disabled] {
     &:hover,
     &:focus,
     &:active {
-        color: $color-link-hover;
-        background: none;
-        text-decoration: underline;
-        border: 0;
+        &, span {
+            color: $color-link-hover;
+            background: none;
+            text-decoration: underline;
+            border: 0;
+        }
     }
 
     // Sizes
