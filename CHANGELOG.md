@@ -10,19 +10,19 @@ rename **Unreleased** to the release version and date and start a new empty
 **Unreleased** section.
 
 ## `[Unreleased]`
-###Added
-###Changed
-###Removed
+#### Added
+#### Changed
+#### Removed
 
 ## `[1.3.0]` - 2017/14/08
-###Changed
+#### Changed
 - Set breakpoint tiny to have valid min-width
 - Add focus state for buttons (outline like on chrome) to work in other browsers
 - Remove firefox inner border for buttons focus state
 - Buttons styled as links use spans to have underlined links without underlining any icons in the buttons as well.
 
 ## `[1.2.0]` - 2017/09/08
-###Added
+#### Added
 - Type trump classes for colors and font weight
 - Large soft and push layout classes
 - Function to get a breakpoint min-width value from a breakpoint map
