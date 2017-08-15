@@ -12,6 +12,8 @@ rename **Unreleased** to the release version and date and start a new empty
 ## `[Unreleased]`
 #### Added
 #### Changed
+- Fixed `push-large--top`. It was applying `margin-bottom`; now corrected to apply `margin-top`.
+
 #### Removed
 
 ## `[1.3.0]` - 2017/14/08
