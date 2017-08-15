@@ -12,18 +12,20 @@ rename **Unreleased** to the release version and date and start a new empty
 ## `[Unreleased]`
 #### Added
 #### Changed
-- Fixed `push-large--top`. It was applying `margin-bottom`; now corrected to apply `margin-top`.
-
 #### Removed
 
-## `[1.3.0]` - 2017/14/08
+## `[1.3.1]` - 2017-08-15
+#### Changed
+- Fixed `push-large--top`. It was applying `margin-bottom` and is now corrected to apply `margin-top`.
+
+## `[1.3.0]` - 2017-08-14
 #### Changed
 - Set breakpoint tiny to have valid min-width
 - Add focus state for buttons (outline like on chrome) to work in other browsers
 - Remove firefox inner border for buttons focus state
 - Buttons styled as links use spans to have underlined links without underlining any icons in the buttons as well.
 
-## `[1.2.0]` - 2017/09/08
+## `[1.2.0]` - 2017-08-09
 #### Added
 - Type trump classes for colors and font weight
 - Large soft and push layout classes
@@ -33,13 +35,13 @@ rename **Unreleased** to the release version and date and start a new empty
 - Increase left padding for island--info
 - Sets a line height for headings and heading object classes.
 
-## `[1.1.0]` - 2017/08/08
+## `[1.1.0]` - 2017-08-08
 #### Changed
 - Tweak to island title bar padding
 #### Added
 - .micro and .milli type helper classes
 
-## `[1.0.0]` - 2017/08/03
+## `[1.0.0]` - 2017-08-03
 #### Added
 - Box model
 - Trumps visibility
