@@ -4,44 +4,60 @@
         <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 
         <script src="../build/js/index.js"></script>
+        <style type="text/css">
+            code {
+                font-size: 1.35em;
+                line-height: 1;
+                display: inline-block;
+                padding: 0 0.1em;
+                background: rgba(0, 0, 0, 0.075);
+                border-radius: 0.2em;
+                letter-spacing: -0.35px;
+                color: rgba(black, 0.8);
+                margin-right: -0.05em;
+            }
+        </style>
     </head>
     <body style="width: 80%;  max-width: 60em; margin: auto;">
         <h1>Patterns Library</h1>
-        <h1 id="typography" class="gamma  text--uppercase /  heading--divider">1. Headings and font sizes</h1>
 
-        <h1 class="giga">Giga <!-- and some really really long text which wraps around onto another line showing line height --></h1>
+        <div id="toc" class="hidden"><p>On this page:</p></div>
+
+        <h1 id="typography">1. Headings and font sizes</h1>
+
+        <h2 class="giga">Giga <!-- and some really really long text which wraps around onto another line showing line height --></h1>
         <p>
         This is normal text. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur eveniet quidem quam repudiandae eius exercitationem quo id similique ratione maiores! Atque, nisi, eveniet animi officia excepturi unde aliquam nostrum quaerat.
         </p>
-        <h1 class="mega">Mega <!-- and some really really long text which wraps around onto another line showing line height --></h1>
+        <h2 class="mega">Mega <!-- and some really really long text which wraps around onto another line showing line height --></h1>
         <p>
         This is normal text. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur eveniet quidem quam repudiandae eius exercitationem quo id similique ratione maiores! Atque, nisi, eveniet animi officia excepturi unde aliquam nostrum quaerat.
         </p>
-        <h1 class="kilo">Kilo <!-- and some really really long text which wraps around onto another line showing line height --></h1>
+        <h2 class="kilo">Kilo <!-- and some really really long text which wraps around onto another line showing line height --></h1>
         <p>
         This is normal text. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur eveniet quidem quam repudiandae eius exercitationem quo id similique ratione maiores! Atque, nisi, eveniet animi officia excepturi unde aliquam nostrum quaerat.
         </p>
-        <h1>Heading 1 <!-- and some really really long text which wraps around onto another line showing line height --></h1>
+        <h2 class="alpha">Heading 1 (alpha)</h2>
         <p>
         This is normal text. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur eveniet quidem quam repudiandae eius exercitationem quo id similique ratione maiores! Atque, nisi, eveniet animi officia excepturi unde aliquam nostrum quaerat.
         </p>
-        <h2>Heading 2 <!-- and some really really long text which wraps around onto another line showing line height --></h2>
+        <h2 class="beta">Heading 1 (beta)</h2>
         <p>
         This is normal text. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur eveniet quidem quam repudiandae eius exercitationem quo id similique ratione maiores! Atque, nisi, eveniet animi officia excepturi unde aliquam nostrum quaerat.
         </p>
-        <h3>Heading 3 <!-- and some really really long text which wraps around onto another line showing line height --></h3>
+        <h2 class="gamma">Heading 2 (gamma)</h2>
         <p>
         This is normal text. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur eveniet quidem quam repudiandae eius exercitationem quo id similique ratione maiores! Atque, nisi, eveniet animi officia excepturi unde aliquam nostrum quaerat.
         </p>
-        <h4>Heading 4 <!-- and some really really long text which wraps around onto another line showing line height --></h4>
+        <h2 class="delta">Heading 3 (delta)</h2>
         <p>
         This is normal text. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur eveniet quidem quam repudiandae eius exercitationem quo id similique ratione maiores! Atque, nisi, eveniet animi officia excepturi unde aliquam nostrum quaerat.
         </p>
-        <h5>Heading 5 <!-- and some really really long text which wraps around onto another line showing line height --></h5>
+        <h2 class="epsilon">Heading 4 (epsilon)</h2>
         <p>
         This is normal text. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur eveniet quidem quam repudiandae eius exercitationem quo id similique ratione maiores! Atque, nisi, eveniet animi officia excepturi unde aliquam nostrum quaerat.
         </p>
-        <h6>Heading 6 <!-- and some really really long text which wraps around onto another line showing line height --></h6>
+        <h2 class="zeta">Heading 5 (zeta)</h2>
         <p>
         This is normal text. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur eveniet quidem quam repudiandae eius exercitationem quo id similique ratione maiores! Atque, nisi, eveniet animi officia excepturi unde aliquam nostrum quaerat.
         </p>
@@ -58,7 +74,7 @@
         This is the lead (or lede) class. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione, hic, necessitatibus eum eaque maxime enim explicabo quas voluptates deleniti consequuntur numquam placeat assumenda quis amet corrupti nulla aspernatur cupiditate obcaecati?
         </p>
 
-        <h1>2. Islands</h1>
+        <h1 id="islands">2. Islands</h1>
         <pre>&lt;div class="island"/&gt;</pre>
         <div class="island">
             <p>Normal island</p>
@@ -92,8 +108,8 @@
             <p>Island alert</p>
         </div>
 
-        <h1 id="islands">Islands with title bars</h1>
-         <pre>&lt;div class="island"/&gt;&lt;div class="island__title-bar"/&gt;</pre>
+        <h1 id="islands-with-title-bars">2.1 Islands with title bars</h1>
+        <pre>&lt;div class="island"/&gt;&lt;div class="island__title-bar"/&gt;</pre>
         <div class="island">
             <div class="island__title-bar">
                 <h3 class="epsilon">Title bar</h3>
@@ -149,7 +165,7 @@
         </div>
 
 
-        <h1>3. Buttons</h1>
+        <h1 id="buttons">3. Buttons</h1>
 
         <p>Normal sized buttons (this is standard sized text)</p>
 
@@ -194,13 +210,11 @@
 
         <h6>Inline button style</h6>
 
-        <p>Use an <button class="button--inline">inline button</button> when a button should be part of normal text but where an anchor link is in appropriate (ie. if the buttons triggers an action rather than navigating the browser to another URL / resource.</p>
-
-        <p>You can also use a small-cap inline when necessary. <button class="button--inline-smallcap">A smaller button</button></p>
+        <p>Use an <button class="button--inline">inline button</button> when a button should be part of normal text but where an anchor link is inappropriate (i.e. if the buttons triggers an action rather than navigating to another URL / resource)</p>
 
         <h6>Submittable buttons</h6>
 
-        <p>Just add the classes <code>"js--is-submittable  is-submittable"</code>. By default the Javascript application will bind the button's parent form submission and run the animation for you. If you'd like to handle this yourself simply omit <code>js--is-submittable</code> (leaving <code>is-submittable</code> for styling) and provide your own JS hook class such as <code>js--submit-button</code>. Obviously don't use <code>js--is-submittable</code> again!</p>
+        <p>Just add the classes <code>js--is-submittable  is-submittable</code>. By default the Javascript application will bind the button's parent form submission and run the animation for you. If you'd like to handle this yourself simply omit <code>js--is-submittable</code> (leaving <code>is-submittable</code> for styling) and provide your own JS hook class such as <code>js--submit-button</code>. Obviously don't use <code>js--is-submittable</code> again!</p>
 
         <form action="/patterns/index.php" onSubmit="return false;">
             <input type="hidden" name="file" value="buttons" />
@@ -285,15 +299,15 @@
 
         </div><!-- js--confirm-button__wrapper -->
 
-        <h1>Tables</h1>
+        <h1 id="tables">4. Tables</h1>
 
         <table class="table--dividers  table--row-hoverable  push--bottom">
             <tbody>
                 <tr>
-                    <td>Table using class </td><td>.table--dividers</td>
+                    <td>This table uses <code>.table--dividers</code> and <code>.table--row-hoverable</code></td>
                 </tr>
                 <tr>
-                    <td>And </td><td>.table--row-hoverable</td>
+                    <td>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum id ligula porta felis euismod semper. Cras mattis consectetur purus sit amet fermentum.</td>
                 </tr>
             </tbody>
         </table>
@@ -304,5 +318,29 @@
         <p>Links can be styled to look like buttons with the <code>.button</code> class:</p>
         <a class="button  button--small">I am a link</a>
 
+
+        <script type="text/javascript">
+            const headings = document.getElementsByTagName('h1');
+            const list = document.createElement('ul');
+            const toc = document.getElementById('toc');
+
+            for (let i = 0; i < headings.length; i++) {
+                if ( ! headings[i].id || ! headings[i].textContent) {
+                    continue;
+                }
+
+                let list_item = document.createElement('li');
+                let link = document.createElement('a');
+                let label = document.createTextNode(headings[i].textContent);
+
+                list.appendChild(list_item);
+                list_item.appendChild(link);
+                link.appendChild(label);
+                link.setAttribute('href', '#' + headings[i].id);
+            }
+
+            toc.appendChild(list);
+            toc.setAttribute('class', '');
+        </script>
     </body>
 </html>
