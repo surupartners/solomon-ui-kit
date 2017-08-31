@@ -11,12 +11,15 @@ rename **Unreleased** to the release version and date and start a new empty
 
 ## `[Unreleased]`
 #### Added
+#### Changed
+#### Removed
+
+## `[1.3.2]` - 2017-08-31
+#### Added
 - Added specific colours for links into [`_link.scss`](./src/scss/elements/_link.scss)
 
 #### Changed
 - Adds correction of `push-large--top` from `1.3.1` into [`main.css`](./builds/css/main.css) and [`main.min.css`](./builds/css/main.min.css)
-
-#### Removed
 
 ## `[1.3.1]` - 2017-08-15
 #### Changed
@@ -34,6 +37,7 @@ rename **Unreleased** to the release version and date and start a new empty
 - Type trump classes for colors and font weight
 - Large soft and push layout classes
 - Function to get a breakpoint min-width value from a breakpoint map
+
 ###Changed
 - Increase margin bottom for trump classes and island.
 - Increase left padding for island--info
@@ -42,6 +46,7 @@ rename **Unreleased** to the release version and date and start a new empty
 ## `[1.1.0]` - 2017-08-08
 #### Changed
 - Tweak to island title bar padding
+
 #### Added
 - .micro and .milli type helper classes
 
