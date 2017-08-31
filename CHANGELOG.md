@@ -11,7 +11,11 @@ rename **Unreleased** to the release version and date and start a new empty
 
 ## `[Unreleased]`
 #### Added
+- Added specific colours for links into [`_link.scss`](./src/scss/elements/_link.scss)
+
 #### Changed
+- Adds correction of `push-large--top` from `1.3.1` into [`main.css`](./builds/css/main.css) and [`main.min.css`](./builds/css/main.min.css)
+
 #### Removed
 
 ## `[1.3.1]` - 2017-08-15
