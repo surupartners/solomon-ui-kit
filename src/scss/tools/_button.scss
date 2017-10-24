@@ -30,7 +30,7 @@
     &:focus {
         color: white;
         text-decoration: none;
-        background: darken($button-primary, 7%);
+        background-color: darken($button-primary, 7%);
         border: 1px solid darken($button-primary, 12%);
     }
 
