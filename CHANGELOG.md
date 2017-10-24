@@ -15,6 +15,11 @@ rename **Unreleased** to the release version and date and start a new empty
 #### Removed
 
 ## `[1.3.2]` - 2017-08-31
+#### Changed
+- Button hover now sets the background-color attribute rather than background attribute
+- All build dependencies are now devDependencies so they don't get installed in projects that use this toolkit.
+
+## `[1.3.2]` - 2017-08-31
 #### Added
 - Added specific colours for links into [`_link.scss`](./src/scss/elements/_link.scss)
 
