@@ -11,6 +11,8 @@ rename **Unreleased** to the release version and date and start a new empty
 
 ## `[Unreleased]`
 #### Added
+- Adds `small` and `tiny` sizes to [`_loading_spinner.scss`](./src/scss/objects/_loading_spinner.scss)
+
 #### Changed
 #### Removed
 

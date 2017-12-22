@@ -16,3 +16,14 @@
     animation: spin 750ms infinite linear;
     transform-origin: center;
 }
+
+    .loading-spinner--small {
+        height: $loading-spinner-size--small;
+        width: $loading-spinner-size--small;
+    }
+
+    .loading-spinner--tiny {
+        height: $loading-spinner-size--tiny;
+        width: $loading-spinner-size--tiny;
+    }
+
