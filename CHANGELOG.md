@@ -14,6 +14,12 @@ rename **Unreleased** to the release version and date and start a new empty
 #### Changed
 #### Removed
 
+## `[1.3.3]` - 2018-09-06
+#### Added
+- Adds `small` and `tiny` sizes to [`_loading_spinner.scss`](./src/scss/objects/_loading_spinner.scss)
+#### Changed
+- Form submit animator now properly disables buttons that are "submitting" to prevent more form submissions
+
 ## `[1.3.2]` - 2017-08-31
 #### Changed
 - Button hover now sets the background-color attribute rather than background attribute
