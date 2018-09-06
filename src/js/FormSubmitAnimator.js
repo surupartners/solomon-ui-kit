@@ -37,6 +37,9 @@ var FormSubmitAnimator = {
         $buttons.addClass('submitting');
         $buttons.addClass('button--disabled');
 
+        // Disable the buttons to prevent more than one form submission.
+        $buttons.prop('disabled', true);
+
         // Don't do anything with labels if a selector string was not passed in
         if ( ! _.isString(label)) { return; }
 
