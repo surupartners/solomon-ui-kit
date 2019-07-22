@@ -3,7 +3,7 @@
 "use strict";
 
 var gulp = require('gulp'),
-    gutil = require('gulp-util'),
+    log = require('fancy-log'),
     browserify = require('browserify'),
     source = require('vinyl-source-stream'),
     buffer = require('vinyl-buffer'),
@@ -24,7 +24,7 @@ gulp.task('js', ['clean:js'], function () {
 
     return b.bundle()
         .on('error', function (error) {
-            gutil.log(gutil.colors.red(error.message));
+            log.error(error.message);
             this.emit('end');
         })
         .pipe(source('index.js'))

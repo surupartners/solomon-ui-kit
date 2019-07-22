@@ -3,7 +3,8 @@
 "use strict";
 
 var gulp = require('gulp'),
-    gutil = require('gulp-util'),
+    log = require('fancy-log'),
+    colors = require('ansi-colors'),
     git = require('gulp-git'),
     bump = require('gulp-bump'),
     inquirer = require('inquirer'),
@@ -96,13 +97,13 @@ gulp.task('start-release', ['release-start-branch']);
 gulp.task('complete-release', function () {
     // First, check we're on a release branch
     if ( ! currentGitBranchNameStartsWith('release/')) {
-        gutil.log(gutil.colors.red('ERROR: must be on "release/x.y.z" branch to complete a release; currently checked-out branch is "' + getCurrentGitBranchName() + '".'))
+        log.error('ERROR: must be on "release/x.y.z" branch to complete a release; currently checked-out branch is "' + getCurrentGitBranchName() + '".')
         process.exit(-1);
     }
 
     // Next, check we have a clean working directory
     if ( ! gitWorkingDirectoryIsClean()) {
-        gutil.log(gutil.colors.red('ERROR: working directory must be clean before continuing.'))
+        log.error('ERROR: working directory must be clean before continuing.')
         process.exit(-1);
     }
 
@@ -112,9 +113,9 @@ gulp.task('complete-release', function () {
         type: 'confirm',
         name: 'continue',
         message: 'This will merge this branch into ' +
-            gutil.colors.yellow('master') + ' and ' + gutil.colors.yellow('dev') +
+            colors.yellow('master') + ' and ' + colors.yellow('dev') +
             ', tag it as ' +
-            gutil.colors.yellow(currentVersion) +
+            colors.yellow(currentVersion) +
             ', then delete this branch. ' +
             'Do you want to proceed?',
     }).then(function (answers) {
@@ -150,8 +151,8 @@ gulp.task('complete-release', function () {
                             // 6. Delete the release branch
                             git.exec({args: 'branch -d ' + releaseBranch}, function (err, stdout) {
                                 if (err) { throw err; }
-                                gutil.log( stdout );
-                                gutil.log('✔ Done. Your release is ready to be pushed. You may now push the "dev" and "master" branches and the release tag — e.g:', gutil.colors.bgWhite.black.bold('git push origin master; git push origin dev; git push origin ' + currentVersion + ';'));
+                                log( stdout );
+                                log('✔ Done. Your release is ready to be pushed. You may now push the "dev" and "master" branches and the release tag — e.g:', colors.bgWhite.black.bold('git push origin master; git push origin dev; git push origin ' + currentVersion + ';'));
                             });
                         });
                     });
@@ -171,7 +172,7 @@ gulp.task('complete-release', function () {
 gulp.task('release-start-branch', ['release-update-other-version-references'], function (callback) {
     var newVersion = getPackageJson().version;
 
-    gutil.log('Package version is now', gutil.colors.yellow(newVersion));
+    log('Package version is now', colors.yellow(newVersion));
 
     // TODO: Sort out callback hell below. Maybe gulp-git returns
     // promises?
@@ -184,7 +185,7 @@ gulp.task('release-start-branch', ['release-update-other-version-references'], f
         // release branch
         var commit_cmd = execSync('git commit -am "Increments package version to ' + newVersion + '"');
         if (commit_cmd.status !== 0 || commit_cmd.stderr) {
-            gutil.log(gutil.colors.red('ERROR:', commit_cmd.stderr.trim()));
+            log.error('ERROR:' + commit_cmd.stderr.trim())
             throw 'Failed to Git commit version bump. Please intervene.';
         }
 
@@ -193,13 +194,13 @@ gulp.task('release-start-branch', ['release-update-other-version-references'], f
 
         // Running final instruction in setTimeout so it appears after everything else
         setTimeout(function () {
-            gutil.log(gutil.colors.bold('↑↑↑ Please review committed changes above'));
-            gutil.log('Also, don\'t forget to', gutil.colors.bold('update CHANGELOG.md'), 'with the changes in this release and run', gutil.colors.bold('npm run gulp build'), 'to build assets for the release.')
-            gutil.log(
+            log(colors.bold('↑↑↑ Please review committed changes above'));
+            log('Also, don\'t forget to', colors.bold('update CHANGELOG.md'), 'with the changes in this release and run', colors.bold('npm run gulp build'), 'to build assets for the release.')
+            log(
                 'When you\'re ready to finalise this release, make sure',
-                gutil.colors.bold('master'), 'and', gutil.colors.bold('dev'),
-                'are both up to date with', gutil.colors.bold('origin'), 'and then run',
-                gutil.colors.bgCyan.black.bold(' npm run complete-release '),
+                colors.bold('master'), 'and', colors.bold('dev'),
+                'are both up to date with', colors.bold('origin'), 'and then run',
+                colors.bgCyan.black.bold(' npm run complete-release '),
                 'from this branch to merge into master and tag that merge commit with the package version.'
             );
 
@@ -232,7 +233,7 @@ gulp.task('release-update-other-version-references', ['release-bump-package-vers
  * we released this package in other places.
  */
 gulp.task('release-bump-package-version', ['release-define-type'], function () {
-    gutil.log('OK, bumping the version for a', gutil.colors.yellow(releaseType), 'release...');
+    log('OK, bumping the version for a ' + colors.yellow(releaseType) + ' release...');
 
     // Get all the files to bump version in
     return gulp.src(['package.json'])
@@ -252,19 +253,19 @@ gulp.task('release-define-type', function () {
 
     // First, check we're on the dev branch
     if ( ! currentGitBranchNameStartsWith('dev')) {
-        gutil.log(gutil.colors.red('ERROR: must be on "dev" branch to start a release; currently checked-out branch is "' + getCurrentGitBranchName() + '".'))
+        log.error('ERROR: must be on "dev" branch to start a release; currently checked-out branch is "' + getCurrentGitBranchName() + '".')
         process.exit(-1);
     }
 
     // Next, check we have a clean working directory
     if ( ! gitWorkingDirectoryIsClean()) {
-        gutil.log(gutil.colors.red('ERROR: working directory must be clean before starting a release branch.'))
+        log.error('ERROR: working directory must be clean before starting a release branch.')
         process.exit(-1);
     }
 
     // Finally, ask the user what type of release they want to do and store
     // their answer on releaseType
-    gutil.log('Current version:', gutil.colors.yellow(require('../../package.json').version));
+    log('Current version:', colors.yellow(require('../../package.json').version));
 
     return inquirer.prompt({
         type: 'list',
