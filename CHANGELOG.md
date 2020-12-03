@@ -14,6 +14,10 @@ rename **Unreleased** to the release version and date and start a new empty
 #### Changed
 #### Removed
 
+## `[1.5.0]` - 2020-12-03
+#### Changed
+- Weight semibold is now 500 (rather than being the same as bold at 600)
+
 ## `[1.3.3]` - 2018-09-06
 #### Added
 - Adds `small` and `tiny` sizes to [`_loading_spinner.scss`](./src/scss/objects/_loading_spinner.scss)
