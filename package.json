@@ -45,7 +45,7 @@
     "gulp-uglify": "^2.0.0",
     "gulp-util": "^3.0.8",
     "inquirer": "^1.2.3",
-    "jquery": "^3.1.1",
+    "jquery": "^3.5.0",
     "modularscale-sass": "^2.1.1",
     "require-dir": "^0.3.2",
     "sync-exec": "^0.6.2",
