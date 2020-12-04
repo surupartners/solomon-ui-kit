@@ -14,6 +14,10 @@ rename **Unreleased** to the release version and date and start a new empty
 #### Changed
 #### Removed
 
+## `[1.5.1]` - 2020-12-04
+#### Changed
+- Weight semibold is now 600 and bold is 700
+
 ## `[1.5.0]` - 2020-12-03
 #### Changed
 - Weight semibold is now 500 (rather than being the same as bold at 600)
