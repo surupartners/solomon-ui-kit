@@ -14,6 +14,12 @@ rename **Unreleased** to the release version and date and start a new empty
 #### Changed
 #### Removed
 
+## `[1.6.0]` - 2020-12-21
+#### Added
+- Font weight variables
+### Changed
+- Dependency package versions
+
 ## `[1.5.1]` - 2020-12-04
 #### Changed
 - Weight semibold is now 600 and bold is 700
