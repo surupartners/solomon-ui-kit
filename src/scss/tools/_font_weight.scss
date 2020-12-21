@@ -8,7 +8,7 @@
 /**
  * Font weight helpers
  */
-@mixin weight--light    { font-weight: 300 !important; }
-@mixin weight--normal   { font-weight: 400 !important; }
-@mixin weight--semibold { font-weight: 600 !important; }
-@mixin weight--bold     { font-weight: 700 !important; }
+@mixin weight--light    { font-weight: $weight--light !important; }
+@mixin weight--normal   { font-weight: $weight--normal !important; }
+@mixin weight--semibold { font-weight: $weight--semibold !important; }
+@mixin weight--bold     { font-weight: $weight--bold !important; }
