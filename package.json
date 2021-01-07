@@ -1,6 +1,6 @@
 {
   "name": "solomon-ui-kit",
-  "version": "1.6.0",
+  "version": "2.0.0",
   "description": "A toolbox of front-end assets for building UBS Solomon and related web applications' web UI.",
   "main": "build/index.js",
   "directories": {

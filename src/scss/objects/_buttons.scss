@@ -69,13 +69,13 @@ a.button {
 .button--secondary {
     background: $button-secondary;
     border: 1px solid darken($button-secondary, 10%);
-    color: mix($color-text, $button-secondary, 75%);
+    color: $button-secondary-text;
 
     &:hover,
     &:active,
     &:focus {
         background: darken($button-secondary, 7%);
-        color: mix($color-text, $button-secondary, 90%);
+        color: $button-secondary-text-hover;
         border: 1px solid darken($button-secondary, 20%);
     }
 
@@ -200,7 +200,7 @@ button[disabled] {
         &:focus {
             background: $secondary-inactive;
             border: 1px solid darken($secondary-inactive, 5%);
-            color: mix($color-text, $secondary-inactive, 30%);
+            color: mix(white, $button-secondary-text, 54%);
         }
     }
 
