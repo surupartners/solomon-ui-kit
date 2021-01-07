@@ -14,6 +14,13 @@ rename **Unreleased** to the release version and date and start a new empty
 #### Changed
 #### Removed
 
+## `[2.0.0]`
+#### Added
+#### Changed
+- Changes $color-text to be darker.
+- Adds variables for button--secondary color so it's not based on $color-text
+#### Removed
+
 ## `[1.6.0]` - 2020-12-21
 #### Added
 - Font weight variables
