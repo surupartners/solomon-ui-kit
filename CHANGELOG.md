@@ -14,6 +14,10 @@ rename **Unreleased** to the release version and date and start a new empty
 #### Changed
 #### Removed
 
+# `[2.0.1]`
+#### Changed
+- Hardcode some variables so that other repos don't need to do maths
+
 ## `[2.0.0]`
 #### Added
 #### Changed
