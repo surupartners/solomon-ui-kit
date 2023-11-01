@@ -3,6 +3,9 @@ $container-width--lrg: 85%;
 $container-width--xlrg: 80%;
 
 // used to extend outside the container
-$container-margin: (100 / strip-unit($container-width) * (100 - $container-width)/2);
-$container-margin--xl: (100 / strip-unit($container-width--lrg) * (100 - $container-width--lrg)/2);
-$container-margin--xxl: (100 / strip-unit($container-width--xlrg) * (100 - $container-width--xlrg)/2);
+// $container-margin: (100 / strip-unit($container-width) * (100 - $container-width)/2);
+$container-margin: 2.63158%;
+// $container-margin--xl: (100 / strip-unit($container-width--lrg) * (100 - $container-width--lrg)/2);
+$container-margin--xl: 8.82353%;
+// $container-margin--xxl: (100 / strip-unit($container-width--xlrg) * (100 - $container-width--xlrg)/2);
+$container-margin--xxl: 12.5%;
